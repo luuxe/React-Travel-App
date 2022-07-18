@@ -1,6 +1,6 @@
 * {
   text-align: center;
-  font-family: sans-serif;
+  font-family: 'Quicksand', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -32,19 +32,16 @@ video {
   justify-content: center;
   align-items: center;
   color: white;
-  background-color: rgba(0,0,0,.25);
-}
-
-.Welcome-h1 {
-  grid-row: 2;
-  
+  background-color: rgba(0,0,0,.3);
 }
 
 .Welcome-text {
   margin-bottom: 20px;
+  font-size: 15px;
 }
 
 .feeling-lucky-btn {
+  font-size: 13px;
   padding: 10px;
   color: white;
   background-color: black;

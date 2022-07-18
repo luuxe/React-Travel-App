@@ -7,7 +7,6 @@ const Welcome = () => {
         <div className='Welcome-container'>
             <video src={videoBackground} autoPlay loop muted />
             <div className = 'Welcome-content'>
-                <h1 className='Welcome-h1'>Welcome</h1>
                         <p className='Welcome-text'>Not sure where to travel next? Let us help.</p>
                         
                 <Link to={"/destinations/"}>

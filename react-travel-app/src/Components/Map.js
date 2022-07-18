@@ -2,13 +2,10 @@ import React from 'react';
 import { useState } from 'react'
 import { GoogleMap, MarkerF } from '@react-google-maps/api';
 
-//lat: 48.8584,
-    //lng: 2.2945,
 
 const containerStyle = {
-    width: '50vw',
+    width: '80vw',
     height: '50vh',
-    border: '2px solid black',
   };
   
 
@@ -27,7 +24,6 @@ const Map = () => {
             center={center}
             zoom={6}
           >
-            { /* Child components, such as markers, info windows, etc. */ }
               <MarkerF
                 position={center}
               />
