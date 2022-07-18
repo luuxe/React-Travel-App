@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react'
-import { GoogleMap, MarkerF } from '@react-google-maps/api';
+import { GoogleMap, MarkerF, LoadScript } from '@react-google-maps/api';
 
 
 const containerStyle = {
@@ -9,26 +9,19 @@ const containerStyle = {
   };
   
 
-const Map = () => {
-
-  const [center, setCenter] = useState({
-    lat: 48.8485,
-    lng: 2.2945
-  })
+const Map = ({center}) => {
   
       return (
-          <div className='Map-container'>
-      
+        <div className='Map-container'>
           <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
             zoom={6}
           >
               <MarkerF
-                position={center}
+              position={center} 
               />
           </GoogleMap>
-        
       </div>
       )
 };

@@ -24,11 +24,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/destinations" element={<Destinations />} />
-
+        
       </Routes>
       <LoadScript
           googleMapsApiKey={ process.env.REACT_APP_GOOGLE_MAPS_API_KEY }
-       />
+        / >
     </div>
   );
 }
