@@ -32,7 +32,7 @@ video {
   justify-content: center;
   align-items: center;
   color: white;
-  background-color: rgba(0,0,0,.2);
+  background-color: rgba(0,0,0,.25);
 }
 
 .Welcome-text {
@@ -46,5 +46,10 @@ video {
   color: white;
   background-color: black;
   border: none;
+}
+
+.images-container {
+  border: 2px solid black;
+  height: 25vh;
 }
 
