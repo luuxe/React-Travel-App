@@ -1,6 +1,7 @@
 
 //stylesheets
 import './App.css';
+import './Components.css'
 
 //Router
 import { Routes, Route, Link } from 'react-router-dom'

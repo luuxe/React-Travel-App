@@ -3,7 +3,7 @@ import Results from './Results';
 import Map from './Map'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-
+import photoBackground from '../assets/eiffel-test.jpeg'
 const destinationsArr = [
     {
         city: 'Paris',
@@ -43,9 +43,9 @@ const Destinations = () => {
     }
 
     return (
-        <div className='destinations-container'>
+        <div className='destinations-container' >
             <nav>
-                <Link to={"/"}>Home</Link>
+                <Link to={"/"} className='nav'>home</Link>
             </nav>
             <Results
                 destinationResult={destinationResult}

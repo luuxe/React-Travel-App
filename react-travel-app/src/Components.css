@@ -1,0 +1,29 @@
+.destinations-container {
+    background-image: url('../src/assets/eiffel-test.jpeg') ;
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.nav {
+    color: gray;
+    top: 0;
+}
+
+.destination-title {
+    font-family: 'Koulen', sans-serif;
+    font-size: 60px;
+    text-align: left;
+    margin: 40px 0px 10px 10px;
+    line-height: 1;
+    grid-row: 2;
+}
+
+.images-container {
+    border: 1px solid black;
+    height: 25vh;
+    margin: 30px 0px 30px 0px;
+  }
+  

@@ -12,28 +12,27 @@ const Results = ({destinationResult, onLoad}) => {
     
  const url = `${searchPhotos.api}page=1&query=${searchPhotos.location}&client_id=${searchPhotos.key}`
     
-
-useEffect(() => {
-    const getImages = async () => {
-      const res = await fetch(url)
-      const data = await res.json()
-    //   console.log(data.results[0].urls.small)
-        setImages(data.results)
-        for (let i = 0; i < data.results.length; i++){
-            console.log(data.results[i])
-        }
-    }
-
+ useEffect(() => {
     getImages()
 }, [])
 
+
+    const getImages = async () => {
+      const res = await fetch(url)
+      const data = await res.json()
+    
+        const dataArr = data.results
+        setImages(dataArr)
+     
+    }
+    
+    console.log(images)
+    
     return (
         <div>
-            <h1>{destinationResult}</h1>
-            <button onClick={onLoad}>Find another destination</button>
-            <h2>Image results: {images.length}</h2>
+            <h1 className="destination-title">{destinationResult.toUpperCase()}</h1>
+            <button className='destination-btn' onClick={onLoad}>Find another destination</button>
             <div className='images-container'>
-            
             </div>
         </div>
     );
