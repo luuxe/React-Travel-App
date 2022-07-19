@@ -1,15 +1,19 @@
 .destinations-container {
-    /* background-image: url('../src/assets/eiffel-test.jpeg') ;
-    height: 100vh;
-    width: 100vw;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 120%; */
+    background-color: rgb(252, 249, 249);
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: rgb(146, 145, 145);
+    height: 30px;
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 10px;
 }
 
 .nav {
-    color: rgb(146, 145, 145);
-    padding-top: 0px;
+    color: black;
+    text-decoration: none;
 }
 
 .destination-title {
@@ -23,7 +27,7 @@
 }
 
 .destination-btn {
-    color: rgb(3, 3, 3);
+    color: rgb(0, 0, 0);
     font-size: 40px;
 }
 

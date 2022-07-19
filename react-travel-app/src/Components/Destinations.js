@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDice } from '@fortawesome/free-solid-svg-icons'
 
 
-const Destinations = ({ images, destinationResult, location, center, onLoad }) => {
+const Destinations = ({ images, destinationResult, center, onLoad }) => {
 
 
     return (
@@ -16,8 +16,7 @@ const Destinations = ({ images, destinationResult, location, center, onLoad }) =
                 <Link to={"/"} className='nav'>home</Link>
             </nav>
             <div>
-            <FontAwesomeIcon icon={faDice} className='destination-btn' onClick={onLoad} />
-            <h1 className="destination-title">{destinationResult}</h1>
+            <h1 className="destination-title">{destinationResult}<span> <FontAwesomeIcon icon={faDice} className='destination-btn' onClick={onLoad} /></span></h1>
             <div className='images-container'>
             {images.map((image) => (
                 <img

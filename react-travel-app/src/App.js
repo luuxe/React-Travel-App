@@ -15,12 +15,14 @@ import { useState, useEffect } from "react";
 
 const destinationsArr = [
   {
+      name: 'Paris, France',
       city: 'Paris',
       country: 'France',
       lat: '48.8584',
       lng: '2.2945',
   },
   {
+      name: 'Bali, Indonesia',
       city: 'Bali',
       country: 'Indonesia',
       lat: '-8.409518',
@@ -29,41 +31,57 @@ const destinationsArr = [
 ]
 
 
+const destinationName = destinationsArr.map((destination) => {
+  return destination.name
+})
+const latitude =  destinationsArr.map((destination) => {
+  return destination.lat
+})
+
+const longitude =  destinationsArr.map((destination) => {
+  return destination.lng
+})
+
 
 function App() {
 
-  const [destinationResult, setDestinationResult] = useState(`${destinationsArr[0].city}, ${destinationsArr[0].country}`)
+  //state for destination title
+  const [destinationResult, setDestinationResult] = useState(destinationName[0])
 
-    const [location, setLocation] = useState(`${destinationsArr[0].city}`)
-
-    //set variable for image urls
+    //state for images
+  const [images, setImages] = useState([])
+  
+  //state for location query param in url
+  const [location, setLocation] = useState(destinationName[0])
 
     //state for map center coords
     const [center, setCenter] = useState({
-        lat: Number(destinationsArr[0].lat),
-        lng: Number(destinationsArr[0].lng)
+      lat: Number(latitude[0]),
+      lng: Number(longitude[0])
     })
 
 
-    function onLoad() {
-        console.log(destinationResult)
-        const cities = destinationsArr[Math.floor(Math.random() * destinationsArr.length)]
-        setDestinationResult(cities)
-    }
+  function onLoad(e) {
+    e.preventDefault()
+    const newDestination = destinationName[Math.floor(Math.random() * destinationName.length)]
+    setDestinationResult(newDestination)
+    setLocation(newDestination)
+  }
+  
+  //loop through destinationName array, return destination index, increment by one, if index is greater than last index in array, return to index of 0.
 
-  const [images, setImages] = useState([])
 
   const searchPhotos = {
-     key: process.env.REACT_APP_UNSPLASH_API_KEY,
-      api: 'https://api.unsplash.com/search/photos/?',
-     location: 'paris',
+    key: process.env.REACT_APP_UNSPLASH_API_KEY,
+    api: 'https://api.unsplash.com/search/photos/?',
+    page: Math.floor(Math.random() * 10),
+    location: 'Paris, France'
   }
   
      const getImages = async () => {
-     const res = await fetch(`${searchPhotos.api}page=1&query=${searchPhotos.location}&orientation=portrait&client_id=${searchPhotos.key}`)
+     const res = await fetch(`${searchPhotos.api}page=${searchPhotos.page}&query=${searchPhotos.location}&orientation=portrait&client_id=${searchPhotos.key}`)
          const data = await res.json()
          setImages(data.results)
-        
      }
  
      useEffect(() => {
@@ -80,7 +98,6 @@ function App() {
         <Route path="/destinations" element={<Destinations
           images={images}
           destinationResult={destinationResult}
-          location={location}
           center={center}
           onLoad={onLoad}
         />} />
