@@ -2,37 +2,34 @@ import { useState, useEffect } from "react";
 import { faDice } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Results = ({ destinationResult, onLoad, location }) => {
-    const [images, setImages] = useState([])
-
- const searchPhotos = {
-    key: process.env.REACT_APP_UNSPLASH_API_KEY,
-    api: 'https://api.unsplash.com/search/photos/?',
- }
+const Results = ({ destinationResult, onLoad, location, images }) => {
     
- const url = `${searchPhotos.api}page=1&query=${location}&client_id=${searchPhotos.key}`
-    
- useEffect(() => {
-    getImages()
-}, [])
+// const [images, setImages] = useState([])
 
-
-    const getImages = async () => {
-      const res = await fetch(url)
-      const data = await res.json()
+//  const searchPhotos = {
+//     key: process.env.REACT_APP_UNSPLASH_API_KEY,
+//     api: 'https://api.unsplash.com/search/photos/?',
+//  }
     
-        const dataArr = data.results
-        setImages(dataArr)
+//     const getImages = async () => {
+//     const res = await fetch(`${searchPhotos.api}page=1&query=${location}&client_id=${searchPhotos.key}`)
+//         const data = await res.json()
+//         setImages(data.results)
+//         console.log(images)
      
-    }
+//     }
+
+//     useEffect(() => {
+//         getImages()
+//     }, [])
     
-    console.log(images)
     
     return (
         <div>
             <FontAwesomeIcon icon={faDice} className='destination-btn' onClick={onLoad} />
             <h1 className="destination-title">{destinationResult.toUpperCase()}</h1>
             <div className='images-container'>
+                <img src={images[0].urls.small} alt='paris' />
             </div>
         </div>
     );

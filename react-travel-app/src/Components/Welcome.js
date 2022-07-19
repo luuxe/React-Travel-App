@@ -1,8 +1,10 @@
 import React from 'react';
 import videoBackground from '../assets/videoBackground.mp4'
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from "react";
 
 const Welcome = () => {
+
     return (
         <div className='Welcome-container'>
             <video src={videoBackground} autoPlay loop muted />

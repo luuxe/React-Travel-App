@@ -3,7 +3,7 @@ import Results from './Results';
 import Map from './Map'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import photoBackground from '../assets/eiffel-test.jpeg'
+// import photoBackground from '../assets/eiffel-test.jpeg'
 const destinationsArr = [
     {
         city: 'Paris',
@@ -25,12 +25,14 @@ const destinationsArr = [
     'Kyoto, Japan'
 ]
 
-const Destinations = () => {
+const Destinations = ({ images }) => {
 
     //state for destination result h1
     const [destinationResult, setDestinationResult] = useState(`${destinationsArr[0].city}, ${destinationsArr[0].country}`)
 
     const [location, setLocation] = useState(`${destinationsArr[0].city}`)
+
+    //set variable for image urls
 
     //state for map center coords
     const [center, setCenter] = useState({
@@ -45,6 +47,7 @@ const Destinations = () => {
         setDestinationResult(cities)
     }
 
+
     return (
         <div className='destinations-container' >
             <nav>
@@ -53,7 +56,8 @@ const Destinations = () => {
             <Results
                 destinationResult={destinationResult}
                 location={location}
-                onLoad={onLoad} />
+                onLoad={onLoad}
+                images={images}    />
             <Map center={center}/>
 
         </div>
