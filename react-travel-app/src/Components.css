@@ -4,21 +4,27 @@
     width: 100vw;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: 120%;
 }
 
 .nav {
-    color: gray;
-    top: 0;
+    color: white;
+    padding-top: 0px;
 }
 
 .destination-title {
     font-family: 'Koulen', sans-serif;
+    color: rgb(228, 228, 228);
     font-size: 60px;
     text-align: left;
     margin: 40px 0px 10px 10px;
     line-height: 1;
     grid-row: 2;
+}
+
+.destination-btn {
+    color: white;
+    font-size: 40px;
 }
 
 .images-container {

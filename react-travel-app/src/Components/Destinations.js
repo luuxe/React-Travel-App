@@ -10,25 +10,27 @@ const destinationsArr = [
         country: 'France',
         lat: '48.8584',
         lng: '2.2945',
-    } 
-    // 'Bali, Indonesia',
-    // 'Hanoi, Vietnam',
-    // 'Koh Samui, Thailand',
-    // 'Reykjavik, Iceland',
-    // 'Mykonos, Greece',
-    // 'Isla Mujeres, Mexico',
-    // 'Cape Town, South Africa',
-    // 'Marrakesh, Morocco', 
-    // 'Lauterbrunnen, Switzerland',
-    // 'Dubai, United Arab Emirates',
-    // 'Auckland, New Zealand',
-    // 'Kyoto, Japan'
+    } ,
+    'Bali, Indonesia',
+    'Hanoi, Vietnam',
+    'Koh Samui, Thailand',
+    'Reykjavik, Iceland',
+    'Mykonos, Greece',
+    'Isla Mujeres, Mexico',
+    'Cape Town, South Africa',
+    'Marrakesh, Morocco', 
+    'Lauterbrunnen, Switzerland',
+    'Dubai, United Arab Emirates',
+    'Auckland, New Zealand',
+    'Kyoto, Japan'
 ]
 
 const Destinations = () => {
 
     //state for destination result h1
     const [destinationResult, setDestinationResult] = useState(`${destinationsArr[0].city}, ${destinationsArr[0].country}`)
+
+    const [location, setLocation] = useState(`${destinationsArr[0].city}`)
 
     //state for map center coords
     const [center, setCenter] = useState({
@@ -39,7 +41,8 @@ const Destinations = () => {
 
     function onLoad() {
         console.log(destinationResult)
-        // setDestinationResult(destinationsArr[Math.floor(Math.random() * destinationsArr.length)])
+        const cities = destinationsArr[Math.floor(Math.random() * destinationsArr.length)]
+        setDestinationResult(cities)
     }
 
     return (
@@ -49,6 +52,7 @@ const Destinations = () => {
             </nav>
             <Results
                 destinationResult={destinationResult}
+                location={location}
                 onLoad={onLoad} />
             <Map center={center}/>
 
