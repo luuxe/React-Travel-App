@@ -3,26 +3,27 @@ import { useState } from 'react'
 import { GoogleMap, MarkerF, LoadScript } from '@react-google-maps/api';
 
 
+
 const containerStyle = {
-    width: '70vw',
-    height: '40vh',
+    width: '60vw',
+    height: '50vh',
   };
   
 
 const Map = ({center}) => {
   
       return (
-        <div className='Map-container'>
-          {/* <GoogleMap
+        <>
+          <GoogleMap
             mapContainerStyle={containerStyle}
             center={center}
-            zoom={6}
+            zoom={9}
           >
               <MarkerF
               position={center} 
               />
-          </GoogleMap> */}
-      </div>
+          </GoogleMap>
+      </>
       )
 };
 
