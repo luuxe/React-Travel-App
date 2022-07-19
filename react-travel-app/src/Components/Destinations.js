@@ -53,6 +53,16 @@ const Destinations = ({ images }) => {
             <nav>
                 <Link to={"/"} className='nav'>home</Link>
             </nav>
+
+            {/* <div className='results-container'>
+                {images.map((image) => (
+                    <Results
+                    destinationResult={destinationResult}
+                    location={location}
+                    onLoad={onLoad}
+                    image={image}    />
+                ))}
+            </div> */}
             <Results
                 destinationResult={destinationResult}
                 location={location}

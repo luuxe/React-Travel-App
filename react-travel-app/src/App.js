@@ -23,7 +23,7 @@ function App() {
       api: 'https://api.unsplash.com/search/photos/?',
      location: 'paris',
   }
-     
+  
      const getImages = async () => {
      const res = await fetch(`${searchPhotos.api}page=1&query=${searchPhotos.location}&client_id=${searchPhotos.key}`)
          const data = await res.json()

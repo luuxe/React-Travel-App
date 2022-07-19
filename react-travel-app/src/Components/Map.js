@@ -11,19 +11,19 @@ const containerStyle = {
 
 const Map = ({center}) => {
   
-      // return (
-      //   <div className='Map-container'>
-      //     <GoogleMap
-      //       mapContainerStyle={containerStyle}
-      //       center={center}
-      //       zoom={6}
-      //     >
-      //         <MarkerF
-      //         position={center} 
-      //         />
-      //     </GoogleMap>
-      // </div>
-      // )
+      return (
+        <div className='Map-container'>
+          {/* <GoogleMap
+            mapContainerStyle={containerStyle}
+            center={center}
+            zoom={6}
+          >
+              <MarkerF
+              position={center} 
+              />
+          </GoogleMap> */}
+      </div>
+      )
 };
 
 export default Map;
