@@ -12,17 +12,33 @@ const Images = ({ location }) => {
         location: location
       }
     
+        //  const getImages = async () => {
+        //  const res = await fetch(`${searchPhotos.api}page=${searchPhotos.page}&query=${searchPhotos.location}&orientation=portrait&client_id=${searchPhotos.key}`)
+        //      const data = await res.json()
+        //      setImages(data.results)
+        //      console.log(searchPhotos.location)
+        //  }
     
-         const getImages = async () => {
-         const res = await fetch(`${searchPhotos.api}page=${searchPhotos.page}&query=${searchPhotos.location}&orientation=portrait&client_id=${searchPhotos.key}`)
-             const data = await res.json()
-             setImages(data.results)
-             console.log(searchPhotos.location)
-         }
-     
+    const getImages = () => {
+        fetch(`${searchPhotos.api}page=${searchPhotos.page}&query=${searchPhotos.location}&orientation=portrait&client_id=${searchPhotos.key}`)
+
+            .then(res => {
+            return res.json()
+            })
+            .then(data => {
+                setImages(data.results)
+                console.log(searchPhotos.location)
+            })
+            .catch(err => {
+            console.log(err)
+        })
+
+
+    }
+    
          useEffect(() => {
           getImages()
-         }, [])
+         }, [location])
 
     return (
         <div className='carousel-container'>

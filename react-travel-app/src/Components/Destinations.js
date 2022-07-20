@@ -19,10 +19,10 @@ const Destinations = ({ destinationResult, center, handleSubmit, handleChange, l
             
             <h1 className="destination-title">  {destinationResult}<span> <FontAwesomeIcon icon={faDice} className='destination-btn' onClick={handleSubmit} /></span></h1>
            
+            <Map center={center} />
             <Images
                 location={location}
             />
-          <Map center={center} />
             
 
         </div>
