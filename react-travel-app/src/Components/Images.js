@@ -4,12 +4,11 @@ const Images = ({ images }) => {
         <div className='carousel-container'>
             <div className='carousel'>
                 {images.map((image) => (
-                
-                <div className = 'carousel-item'>
+                    //key must be in parent element
+                    <div className='carousel-item' key={image.id}>
                     <img
                     src={image.urls.small}
                     alt={image.alt_description}
-                    key={image.id}
                         />
                     </div>
             ))}
