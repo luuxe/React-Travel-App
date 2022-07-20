@@ -1,14 +1,9 @@
-/* .carousel-container {
-    width: 90%;
+.carousel {
     max-width: 500px;
-    height: 50%;
-    background-color: black;
-    display: flex;
+    max-height: 800px; 
 }
 
-.carousel {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    
-} */
+.carousel.thumb {
+    width: 5%;
+    height: 10%;
+}

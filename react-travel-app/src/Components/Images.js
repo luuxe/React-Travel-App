@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-
+import { Carousel } from 'react-responsive-carousel'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Images = ({ location }) => {
 
@@ -20,7 +21,7 @@ const Images = ({ location }) => {
         //  }
     
     const getImages = () => {
-        fetch(`${searchPhotos.api}page=${searchPhotos.page}&query=${searchPhotos.location}&orientation=portrait&client_id=${searchPhotos.key}`)
+        fetch(`${searchPhotos.api}page=${searchPhotos.page}&per_page=5&query=${searchPhotos.location}&orientation=portrait&client_id=${searchPhotos.key}`)
 
             .then(res => {
             return res.json()
@@ -41,19 +42,20 @@ const Images = ({ location }) => {
          }, [location])
 
     return (
-        <div className='carousel-container'>
-            <div className='carousel'>
+        <>
+            <Carousel className='carousel'>
                 {images.map((image) => (
                     //key must be in parent element
-                    <div className='carousel-item' key={image.id}>
+                    <div key={image.id}>
                     <img
-                    src={image.urls.small}
-                    alt={image.alt_description}
-                        />
+                    src={image.urls.regular}
+                            alt={image.alt_description}
+                            
+                        />  
                     </div>
-            ))}
-            </div>
-        </div>
+            ))}   
+            </Carousel>
+        </>
     );
 };
 
