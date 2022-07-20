@@ -1,7 +1,8 @@
 
 //stylesheets
 import './App.css';
-import './Components.css'
+import '../src/Components/Components.css'
+import '../src/Components/Images.css'
 
 //Router
 import { Routes, Route, Link } from 'react-router-dom'
@@ -37,7 +38,6 @@ const destinationName = destinationsArr.map((destination) => {
 const latitude =  destinationsArr.map((destination) => {
   return destination.lat
 })
-
 const longitude =  destinationsArr.map((destination) => {
   return destination.lng
 })
@@ -66,16 +66,19 @@ function App() {
     const newDestination = destinationName[Math.floor(Math.random() * destinationName.length)]
     setDestinationResult(newDestination)
     setLocation(newDestination)
+    console.log(newDestination)
+    console.log(location)
   }
   
+
   //loop through destinationName array, return destination index, increment by one, if index is greater than last index in array, return to index of 0.
 
 
   const searchPhotos = {
     key: process.env.REACT_APP_UNSPLASH_API_KEY,
     api: 'https://api.unsplash.com/search/photos/?',
-    page: Math.floor(Math.random() * 10),
-    location: 'Paris, France'
+    page: 1,
+    location: location
   }
   
      const getImages = async () => {

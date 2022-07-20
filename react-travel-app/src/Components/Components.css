@@ -1,9 +1,9 @@
 .destinations-container {
-    background-color: rgb(252, 249, 249);
+    background-color: rgb(235, 218, 207);
 }
 
 nav {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgb(218, 196, 182);
     color: rgb(146, 145, 145);
     height: 30px;
     text-align: right;
@@ -14,11 +14,12 @@ nav {
 .nav {
     color: black;
     text-decoration: none;
+    font-size: 18px;
 }
 
 .destination-title {
     font-family: 'Koulen', sans-serif;
-    color: rgb(182, 182, 182);
+    color: rgb(169, 147, 131);
     font-size: 60px;
     text-align: left;
     margin: 40px 0px 10px 10px;
@@ -27,16 +28,7 @@ nav {
 }
 
 .destination-btn {
-    color: rgb(0, 0, 0);
+    color: black;
     font-size: 40px;
 }
 
-/* .images-container {
-    display: grid;
-    width: 50vw;
-}
-
-.images-container img {
-    margin-top: 20px;
-} */
-  
