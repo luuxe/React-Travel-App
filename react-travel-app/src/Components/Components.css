@@ -16,12 +16,10 @@ nav {
 
 .destination-title {
     font-size: 40px;
-    font-family: 'Koulen', sans-serif;
     color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, 0.151) ;
     z-index: 1;
-    position: absolute;
-    top: 0;
+
 }
 
 .destination-btn {

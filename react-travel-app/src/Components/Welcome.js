@@ -3,8 +3,11 @@ import videoBackground from '../assets/videoBackground.mp4'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from "react";
 import { LoadScript } from '@react-google-maps/api';
+import Destinations from './Destinations';
 
-const Welcome = ({handleChange, handleSubmit}) => {
+const Welcome = ({ handleChange, handleSubmit, location, destinationResult, center }) => {
+    
+    const [destinationsToggle, setDestinationsToggle] = useState(false)
 
     return (
         <>
@@ -12,9 +15,19 @@ const Welcome = ({handleChange, handleSubmit}) => {
             <div className = 'Welcome-content'>
                         <p className='Welcome-text'>Not sure where to travel next? Let us help.</p>
                         
-                <Link to={"/destinations/"}>
-                <button className='feeling-lucky-btn' onClick = {handleSubmit}>Find my next destination</button>
-                    </Link>
+
+                <button className='feeling-lucky-btn' onClick= {(() => {
+                    setDestinationsToggle(!destinationsToggle);
+                })}>Find my next destination</button>
+
+                {destinationsToggle && <Destinations
+          destinationResult={destinationResult}
+          center={center}
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
+          location={location}
+        />}
+
                 </div>
         </>
     );

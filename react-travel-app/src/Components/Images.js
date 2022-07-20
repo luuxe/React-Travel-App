@@ -34,7 +34,7 @@ const Images = ({ location }) => {
             .catch(err => {
             console.log(err)
         })
-
+        console.log(searchPhotos.page)
 
     }
     
@@ -44,7 +44,7 @@ const Images = ({ location }) => {
 
     return (
         <div className='card'>
-            <Carousel className='carousel' autoPlay={true} infiniteLoop={true} interval={2000} >
+            <Carousel className='carousel' autoPlay={true} infiniteLoop={true} interval={2000} showThumbs={false} >
                 {images.map((image) => (
                     //key must be in parent element
                     <div key={image.id} className='card-body'>

@@ -66,25 +66,23 @@ function App() {
   }
 
   //loop through destinationName array, return destination index, increment by one, if index is greater than last index in array, return to index of 0.
+  const [welcomeToggle, setWelcomeToggle] = useState(true)
+  
+
 
   return (
     <div className="App">
       <div className='App-container'>
       </div>
-      <Routes>
-        <Route path="/" element={<Welcome
+      
+      <Welcome
           handleChange={handleChange}
-          handleSubmit={handleSubmit}/>} />
-        <Route path="/destinations" element={<Destinations
-          images={images}
+          handleSubmit={handleSubmit}
           location={location}
           destinationResult={destinationResult}
           center={center}
-          handleSubmit={handleSubmit}
-          handleChange={handleChange}
-        />} />
-        
-      </Routes> 
+      />   
+      
       <LoadScript
                 googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY} />
             

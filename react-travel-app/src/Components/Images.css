@@ -12,7 +12,7 @@
     padding: 20px;
     max-height: 500px;
 }
-.carousel.thumb {
-    width: 5%;
-    height: 10%;
-}
+
+/* .card-body img {
+    min-height: 400px;
+} */
