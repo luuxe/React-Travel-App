@@ -11,65 +11,59 @@ import { Routes, Route, Link } from 'react-router-dom'
 import Destinations from './Components/Destinations';
 import Welcome from './Components/Welcome';
 import { LoadScript } from '@react-google-maps/api';
-
+import { destinationsData } from './data.js'
 import { useState, useEffect } from "react";
 
-const destinationsArr = [
-  {
-      name: 'Paris, France',
-      city: 'Paris',
-      country: 'France',
-      lat: '48.8584',
-      lng: '2.2945',
-  },
-  {
-      name: 'Bali, Indonesia',
-      city: 'Bali',
-      country: 'Indonesia',
-      lat: '-8.409518',
-      lng: '115.188919',
-  },
-]
 
-
-const destinationName = destinationsArr.map((destination) => {
+const destinationName = destinationsData.map((destination) => {
   return destination.name
 })
-const latitude =  destinationsArr.map((destination) => {
+
+const latitude =  destinationsData.map((destination) => {
   return destination.lat
 })
-const longitude =  destinationsArr.map((destination) => {
+const longitude =  destinationsData.map((destination) => {
   return destination.lng
 })
 
-
 function App() {
 
+  //state for incrementing data to return new destination
+  const [i, incrementIndex] = useState(0)
+
   //state for destination title
-  const [destinationResult, setDestinationResult] = useState(destinationName[0])
+  const [destinationResult, setDestinationResult] = useState(destinationName[Math.floor(Math.random() * destinationName.length)])
 
     //state for images
   const [images, setImages] = useState([])
   
   //state for location query param in url
-  const [location, setLocation] = useState(destinationName[0])
+  const [location, setLocation] = useState(destinationResult)
 
     //state for map center coords
     const [center, setCenter] = useState({
-      lat: Number(latitude[0]),
-      lng: Number(longitude[0])
+      lat: Number(latitude[i]),
+      lng: Number(longitude[i])
     })
+  
 
-
-  function onLoad(e) {
-    e.preventDefault()
-    const newDestination = destinationName[Math.floor(Math.random() * destinationName.length)]
-    setDestinationResult(newDestination)
-    setLocation(newDestination)
-    console.log(newDestination)
-    console.log(location)
+  function handleSubmit(e) {
+    incrementIndex(i + 1)
+    if (i === destinationName.length) {
+     incrementIndex(0)
+    } else {
+    setDestinationResult(destinationName[i])
+      setLocation(destinationName[i])
+      setCenter({ 
+        lat: Number(latitude[i]),
+        lng: Number(longitude[i])
+       })
+    }
   }
   
+  function handleChange() {
+    setDestinationResult(destinationName[Math.floor(Math.random() * destinationName.length)])
+  }
 
   //loop through destinationName array, return destination index, increment by one, if index is greater than last index in array, return to index of 0.
 
@@ -77,10 +71,11 @@ function App() {
   const searchPhotos = {
     key: process.env.REACT_APP_UNSPLASH_API_KEY,
     api: 'https://api.unsplash.com/search/photos/?',
-    page: 1,
+    page: 3,
     location: location
   }
-  
+
+
      const getImages = async () => {
      const res = await fetch(`${searchPhotos.api}page=${searchPhotos.page}&query=${searchPhotos.location}&orientation=portrait&client_id=${searchPhotos.key}`)
          const data = await res.json()
@@ -88,8 +83,9 @@ function App() {
      }
  
      useEffect(() => {
-         getImages()
+      getImages()
      }, [])
+   
  
 
   return (
@@ -97,12 +93,15 @@ function App() {
       <div className='App-container'>
       </div>
       <Routes>
-        <Route path="/" element={<Welcome />} />
+        <Route path="/" element={<Welcome
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}/>} />
         <Route path="/destinations" element={<Destinations
           images={images}
           destinationResult={destinationResult}
           center={center}
-          onLoad={onLoad}
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
         />} />
         
       </Routes>

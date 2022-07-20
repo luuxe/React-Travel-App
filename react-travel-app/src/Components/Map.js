@@ -12,19 +12,19 @@ const containerStyle = {
 
 const Map = ({center}) => {
   
-      // return (
-      //   <>
-      //     <GoogleMap
-      //       mapContainerStyle={containerStyle}
-      //       center={center}
-      //       zoom={9}
-      //     >
-      //         <MarkerF
-      //         position={center} 
-      //         />
-      //     </GoogleMap>
-      // </>
-      // )
+      return (
+        <>
+          <GoogleMap
+            mapContainerStyle={containerStyle}
+            center={center}
+            zoom={9}
+          >
+              <MarkerF
+              position={center} 
+              />
+          </GoogleMap>
+      </>
+      )
 };
 
 export default Map;

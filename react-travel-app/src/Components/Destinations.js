@@ -1,5 +1,4 @@
-import React from 'react';
-// import Results from './Results';
+
 import Map from './Map'
 import Images from './Images';
 import { Link } from 'react-router-dom'
@@ -8,19 +7,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDice } from '@fortawesome/free-solid-svg-icons'
 
 
-const Destinations = ({ images, destinationResult, center, onLoad }) => {
+const Destinations = ({ images, destinationResult, center, handleSubmit, handleChange }) => {
 
 
     return (
         <div className='destinations-container' >
             <nav>
-                <Link to={"/"} className='nav'>HOME</Link>
+                <Link to={"/"} className='nav' onClick={handleChange}>HOME</Link>
             </nav>
             
-                <h1 className="destination-title">  {destinationResult}<span> <FontAwesomeIcon    icon={faDice} className='destination-btn'  onClick={onLoad} /></span></h1>
+                <h1 className="destination-title">  {destinationResult}<span> <FontAwesomeIcon    icon={faDice} className='destination-btn'  onClick={handleSubmit} /></span></h1>
            
-            <Images images={images}
-            />
+            {/* <Images images={images}
+            /> */}
         
             <Map center={center}/>
 

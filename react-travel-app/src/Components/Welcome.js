@@ -3,7 +3,7 @@ import videoBackground from '../assets/videoBackground.mp4'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from "react";
 
-const Welcome = () => {
+const Welcome = ({handleChange, handleSubmit}) => {
 
     return (
         <div className='Welcome-container'>
@@ -12,7 +12,7 @@ const Welcome = () => {
                         <p className='Welcome-text'>Not sure where to travel next? Let us help.</p>
                         
                 <Link to={"/destinations/"}>
-                <button className='feeling-lucky-btn'>Find my next destination</button>
+                <button className='feeling-lucky-btn' onClick = {handleSubmit}>Find my next destination</button>
                     </Link>
                 </div>
             
