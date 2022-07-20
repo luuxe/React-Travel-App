@@ -9,16 +9,19 @@ import { faDice } from '@fortawesome/free-solid-svg-icons'
 
 const Destinations = ({ destinationResult, center, handleSubmit, handleChange, location }) => {
 
+    const [mapToggle, setMapToggle] = useState(false)
 
     return (
         <div className='wrapper' >
             <nav>
                 <Link to={"/"} className='nav' onClick={handleChange}>HOME</Link>
+                <button onClick={() => setMapToggle(!mapToggle)}>MAP</button>
             </nav>
             
             <h1 className="destination-title">  {destinationResult}<span> <FontAwesomeIcon icon={faDice} className='destination-btn' onClick={handleSubmit} /></span></h1>
            
-            {/* <Map center={center} /> */}
+            {mapToggle && <Map center={center} />}
+
             <Images
                 location={location}
                 />

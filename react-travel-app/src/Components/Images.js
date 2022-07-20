@@ -9,7 +9,7 @@ const Images = ({ location }) => {
     const searchPhotos = {
         key: process.env.REACT_APP_UNSPLASH_API_KEY,
         api: 'https://api.unsplash.com/search/photos/?',
-        page: 1,
+        page: Math.floor(Math.random() * 10),
         location: location
       }
     
@@ -42,11 +42,11 @@ const Images = ({ location }) => {
          }, [location])
 
     return (
-        <>
-            <Carousel className='carousel'>
+        <div className='card'>
+            <Carousel className='carousel' autoPlay='true' infiniteLoop='true' interval='2000' >
                 {images.map((image) => (
                     //key must be in parent element
-                    <div key={image.id}>
+                    <div key={image.id} className='card-body'>
                     <img
                     src={image.urls.regular}
                             alt={image.alt_description}
@@ -55,7 +55,7 @@ const Images = ({ location }) => {
                     </div>
             ))}   
             </Carousel>
-        </>
+        </div>
     );
 };
 

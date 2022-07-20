@@ -1,9 +1,15 @@
 .carousel {
-    max-width: 500px;
-    max-height: 800px; 
+    max-width: fit-content;
+    max-height: fit-content;
+    box-shadow:  0 2px 20px gray;
 }
 
-.carousel.thumb {
-    width: 5%;
-    height: 10%;
+.carousel-root {
+    max-width: fit-content;
+    max-height: 600px;
 }
+
+ .card {
+    max-width: fit-content;
+    max-height: 600px;
+} 
