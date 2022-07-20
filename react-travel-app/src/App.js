@@ -67,27 +67,6 @@ function App() {
 
   //loop through destinationName array, return destination index, increment by one, if index is greater than last index in array, return to index of 0.
 
-
-  const searchPhotos = {
-    key: process.env.REACT_APP_UNSPLASH_API_KEY,
-    api: 'https://api.unsplash.com/search/photos/?',
-    page: 3,
-    location: location
-  }
-
-
-     const getImages = async () => {
-     const res = await fetch(`${searchPhotos.api}page=${searchPhotos.page}&query=${searchPhotos.location}&orientation=portrait&client_id=${searchPhotos.key}`)
-         const data = await res.json()
-         setImages(data.results)
-     }
- 
-     useEffect(() => {
-      getImages()
-     }, [])
-   
- 
-
   return (
     <div className="App">
       <div className='App-container'>
@@ -98,16 +77,17 @@ function App() {
           handleSubmit={handleSubmit}/>} />
         <Route path="/destinations" element={<Destinations
           images={images}
+          location={location}
           destinationResult={destinationResult}
           center={center}
           handleSubmit={handleSubmit}
           handleChange={handleChange}
         />} />
         
-      </Routes>
+      </Routes> 
       <LoadScript
-          googleMapsApiKey={ process.env.REACT_APP_GOOGLE_MAPS_API_KEY }
-        / >
+                googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY} />
+            
     </div>
   );
 }

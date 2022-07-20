@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDice } from '@fortawesome/free-solid-svg-icons'
+import { LoadScript } from '@react-google-maps/api';
 
 
-const Destinations = ({ images, destinationResult, center, handleSubmit, handleChange }) => {
+const Destinations = ({ destinationResult, center, handleSubmit, handleChange, location }) => {
 
 
     return (
@@ -16,12 +17,13 @@ const Destinations = ({ images, destinationResult, center, handleSubmit, handleC
                 <Link to={"/"} className='nav' onClick={handleChange}>HOME</Link>
             </nav>
             
-                <h1 className="destination-title">  {destinationResult}<span> <FontAwesomeIcon    icon={faDice} className='destination-btn'  onClick={handleSubmit} /></span></h1>
+            <h1 className="destination-title">  {destinationResult}<span> <FontAwesomeIcon icon={faDice} className='destination-btn' onClick={handleSubmit} /></span></h1>
            
-            {/* <Images images={images}
-            /> */}
-        
-            <Map center={center}/>
+            <Images
+                location={location}
+            />
+          <Map center={center} />
+            
 
         </div>
     );

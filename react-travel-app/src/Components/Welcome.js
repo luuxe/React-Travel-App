@@ -2,6 +2,7 @@ import React from 'react';
 import videoBackground from '../assets/videoBackground.mp4'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from "react";
+import { LoadScript } from '@react-google-maps/api';
 
 const Welcome = ({handleChange, handleSubmit}) => {
 
@@ -15,7 +16,6 @@ const Welcome = ({handleChange, handleSubmit}) => {
                 <button className='feeling-lucky-btn' onClick = {handleSubmit}>Find my next destination</button>
                     </Link>
                 </div>
-            
         </div>
     );
 };

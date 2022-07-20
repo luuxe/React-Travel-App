@@ -21,11 +21,18 @@ export const destinationsData = [
         lng: '-86.7341',
     },
     {
-        name: 'Fiordland, New Zealand',
-        city: 'Fiordland',
-        country: 'New Zealand',
-        lat: '-45.4239',
-        lng: '167.7201',
+        name: 'Dubai, UAE',
+        city: 'Dubai',
+        country: 'UAE',
+        lat: '25.276987',
+        lng: '55.296249',
+    },
+    {
+        name: 'Marrakesh, Morocco',
+        city: 'Marrakesh',
+        country: 'Morocco',
+        lat: '31.628674',
+        lng: '-7.992047',
     },
 ]
   
