@@ -6,6 +6,7 @@ const Images = ({ location }) => {
 
     const [images, setImages] = useState([])
   
+
     const searchPhotos = {
         key: process.env.REACT_APP_UNSPLASH_API_KEY,
         api: 'https://api.unsplash.com/search/photos/?',
@@ -43,7 +44,7 @@ const Images = ({ location }) => {
 
     return (
         <div className='card'>
-            <Carousel className='carousel' autoPlay='true' infiniteLoop='true' interval='2000' >
+            <Carousel className='carousel' autoPlay={true} infiniteLoop={true} interval={2000} >
                 {images.map((image) => (
                     //key must be in parent element
                     <div key={image.id} className='card-body'>
