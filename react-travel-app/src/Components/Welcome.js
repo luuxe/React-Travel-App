@@ -1,8 +1,6 @@
-import React from 'react';
+
 import videoBackground from '../assets/videoBackground.mp4'
-import { Link } from 'react-router-dom'
-import { useState, useEffect } from "react";
-import { LoadScript } from '@react-google-maps/api';
+import { useState } from "react";
 import Destinations from './Destinations';
 
 const Welcome = ({ handleChange, handleSubmit, location, destinationResult, center }) => {
@@ -21,12 +19,12 @@ const Welcome = ({ handleChange, handleSubmit, location, destinationResult, cent
                 })}>Find my next destination</button>
 
                 {destinationsToggle && <Destinations
-          destinationResult={destinationResult}
-          center={center}
-          handleSubmit={handleSubmit}
-          handleChange={handleChange}
-          location={location}
-        />}
+                    destinationResult={destinationResult}
+                    center={center}
+                    handleSubmit={handleSubmit}
+                    handleChange={handleChange}
+                    location={location}
+             />}
 
                 </div>
         </>
