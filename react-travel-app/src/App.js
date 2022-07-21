@@ -72,7 +72,12 @@ function App() {
 
   return (
     <div className="App">
-      <video src={videoBackground} autoPlay playsInline loop muted controls={false} />
+      <video
+        loop
+        muted
+        autoPlay
+        playsInline
+        src={videoBackground} />
       <div className='App-container'>
       </div>
      
