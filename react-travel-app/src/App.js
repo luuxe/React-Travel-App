@@ -55,8 +55,8 @@ function App() {
      incrementIndex(0)
     } else {
     setDestinationResult(destinationName[i])
-      setLocation(destinationName[i])
-      setCenter({ 
+    setLocation(destinationName[i])
+    setCenter({ 
         lat: Number(latitude[i]),
         lng: Number(longitude[i])
        })
@@ -74,7 +74,6 @@ function App() {
 
   return (
     <div className="App">
-      <Nav />
       <video src={videoBackground} autoPlay loop muted />
       <div className='App-container'>
       </div>

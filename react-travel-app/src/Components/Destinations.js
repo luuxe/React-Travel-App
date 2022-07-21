@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDice, faMapLocationDot, faHeart } from '@fortawesome/free-solid-svg-icons'
 import Footer from './Footer';
+import Nav from './Nav'
 
 const Destinations = ({ destinationResult, center, handleSubmit, handleChange, location }) => {
 
@@ -13,7 +14,8 @@ const Destinations = ({ destinationResult, center, handleSubmit, handleChange, l
 
     return (
         <>
-        <div className='wrapper'>
+            <div className='wrapper'>
+                <Nav />
         <div className='card-container'>
             <nav className='destinations-nav'>
                 <FontAwesomeIcon icon={faDice} className='dice-btn' onClick={handleSubmit} />
@@ -29,9 +31,9 @@ const Destinations = ({ destinationResult, center, handleSubmit, handleChange, l
                         {console.log(center)}
             {imagesToggle && <Images location={location} />}
             
-                <div className='title-container'>
+                {/* <div className='title-container'> */}
                         <h1 className="destination-title">  {destinationResult}</h1>
-                </div>
+                {/* </div> */}
             </div>
             </div>
         {/* <Footer /> */}
