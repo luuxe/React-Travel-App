@@ -1,23 +1,21 @@
 import videoBackground from '../assets/videoBackground.mp4'
 
-const Welcome = ({ handleChange, handleSubmit, location, destinationResult, center, welcomeToggle, setWelcomeToggle, destinationsToggle, setDestinationsToggle }) => {
+const Welcome = ({ handleChange, welcomeToggle, setWelcomeToggle, destinationsToggle, setDestinationsToggle }) => {
     
+    {/* <video src={videoBackground} autoPlay loop muted /> */}
 
     return (
-        <div className='welcome-container'>
-            <video src={videoBackground} autoPlay loop muted />
             <div className = 'Welcome-content'>
                         <p className='Welcome-text'>Not sure where to travel next? Let us help.</p>
                         
 
-                <button className='feeling-lucky-btn' onClick= {(() => {
+                <button className='feeling-lucky-btn' onClick={(() => {
                     setDestinationsToggle(!destinationsToggle);
                     setWelcomeToggle(!welcomeToggle)
-                })}>Find my next destination</button>
+                })} onChange={handleChange}>Find my next destination</button>
 
 
-                </div>
-        </div>
+            </div>
     );
 };
 

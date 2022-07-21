@@ -1,8 +1,10 @@
+import {Link} from 'react-router-dom'
+
 
 const Nav = () => {
     return (
         <nav className='nav'>
-            <a href='/' className='site-title'>Site Name</a>
+            <a href='/'>Site Name</a>
         </nav>
     );
 };

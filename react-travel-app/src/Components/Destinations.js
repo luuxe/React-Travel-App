@@ -3,9 +3,8 @@ import Map from './Map'
 import Images from './Images';
 import { useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDice } from '@fortawesome/free-solid-svg-icons'
+import { faDice, faMapLocationDot, faHeart } from '@fortawesome/free-solid-svg-icons'
 import Footer from './Footer';
-import videoBackground from '../assets/videoBackground.mp4'
 
 const Destinations = ({ destinationResult, center, handleSubmit, handleChange, location }) => {
 
@@ -17,20 +16,21 @@ const Destinations = ({ destinationResult, center, handleSubmit, handleChange, l
         <div className='wrapper'>
         <div className='card-container'>
             <nav className='destinations-nav'>
-                <span> <FontAwesomeIcon icon={faDice} className='destination-btn' onClick={handleSubmit} /></span>
-                <button onClick={() => {
+                <FontAwesomeIcon icon={faDice} className='dice-btn' onClick={handleSubmit} />
+                <FontAwesomeIcon icon={faMapLocationDot} className='map-btn' onClick={() => {
                     setMapToggle(!mapToggle)
                     setImagesToggle(!imagesToggle)
-                }}>SHOW MAP</button>
+                        }} />
+                <FontAwesomeIcon icon={faHeart} className='like-btn' />
             </nav>
             
            
             {!imagesToggle && mapToggle && <Map center={center} />}
-
+                        {console.log(center)}
             {imagesToggle && <Images location={location} />}
             
                 <div className='title-container'>
-                    <h1 className="destination-title">  {destinationResult}</h1>
+                        <h1 className="destination-title">  {destinationResult}</h1>
                 </div>
             </div>
             </div>

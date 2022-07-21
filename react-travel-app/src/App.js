@@ -75,9 +75,10 @@ function App() {
   return (
     <div className="App">
       <Nav />
+      <video src={videoBackground} autoPlay loop muted />
       <div className='App-container'>
       </div>
-      
+     
       {welcomeToggle && <Welcome
           handleChange={handleChange}
           handleSubmit={handleSubmit}
@@ -85,17 +86,16 @@ function App() {
           destinationResult={destinationResult}
           center={center}
           welcomeToggle={welcomeToggle}
-        setWelcomeToggle={setWelcomeToggle}
-        destinationsToggle={destinationsToggle}
-        setDestinationsToggle={setDestinationsToggle}
-        
+          setWelcomeToggle={setWelcomeToggle}
+          destinationsToggle={destinationsToggle}
+          setDestinationsToggle={setDestinationsToggle}   
       />}  
       
       {destinationsToggle && <Destinations
                     destinationResult={destinationResult}
                     center={center}
                     handleSubmit={handleSubmit}
-                    handleChange={handleChange}
+                    // handleChange={handleChange}
                     location={location}
              />}
       

@@ -10,6 +10,11 @@
   
 }
 
+.App {
+  display: flex;
+  justify-content: center;
+}
+
 .Map-container {
   height: 50vh;
   display: flex;
