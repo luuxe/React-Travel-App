@@ -25,13 +25,15 @@ const longitude =  destinationsData.map((destination) => {
   return destination.lng
 })
 
+const randomIndex = Math.floor(Math.random() * destinationName.length - 1)
+
 function App() {
 
-  //state for incrementing data to return new destination
-  const [i, incrementIndex] = useState(0)
-
   //state for destination title
-  const [destinationResult, setDestinationResult] = useState(destinationName[Math.floor(Math.random() * destinationName.length)])
+  const [destinationResult, setDestinationResult] = useState(destinationName[randomIndex])
+
+  //state for incrementing data to return new destination
+  const [i, incrementIndex] = useState(randomIndex)
 
     //state for images
   const [images, setImages] = useState([])
@@ -45,6 +47,7 @@ function App() {
       lng: Number(longitude[i])
     })
   
+  console.log(center)
 
   function handleSubmit(e) {
     incrementIndex(i + 1)
