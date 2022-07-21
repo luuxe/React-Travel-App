@@ -2,8 +2,8 @@
     margin-top: 20px;
     display: flex;
     justify-content: space-around;
-    font-size: 25px;
-    color:rgba(255, 255, 255, 0.7);
+    font-size: 30px;
+    color:rgba(255, 255, 255, 0.8);
 }
 
 .like-btn:hover {
@@ -20,6 +20,7 @@
 
 .card-container {
     background-color: rgba(255, 255, 255, 0.4);
+    height: 90vh;
 }
 
 .card {
@@ -33,7 +34,7 @@
 .carousel {
     max-width: 400px;
     max-height: 700px;
-    border-radius: 6%;
+    border-radius: 25px;
 }
 
 .card-body{
