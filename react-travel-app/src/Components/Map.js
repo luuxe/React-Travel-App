@@ -1,20 +1,20 @@
 import React from 'react';
-import { useState } from 'react'
-import { GoogleMap, MarkerF, LoadScript } from '@react-google-maps/api';
+import { GoogleMap, MarkerF } from '@react-google-maps/api';
 
 
 
 const containerStyle = {
-    width: '400px',
-    height: '40vh',
+    width: '100%',
+    height: '70vh',
   };
   
 
 const Map = ({center}) => {
   
       return (
-        <>
+        <div className='map-container'>
           <GoogleMap
+            className='google-map'
             mapContainerStyle={containerStyle}
             center={center}
             zoom={9}
@@ -23,7 +23,7 @@ const Map = ({center}) => {
               position={center} 
               />
           </GoogleMap>
-      </>
+      </div>
       )
 };
 

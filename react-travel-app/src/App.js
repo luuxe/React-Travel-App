@@ -3,11 +3,14 @@
 import './App.css';
 import '../src/Components/Components.css'
 import '../src/Components/Images.css'
+import '../src/Components/nav-footer.css'
+import videoBackground from '../src/assets/videoBackground.mp4'
 
 //Router
 import { Routes, Route, Link } from 'react-router-dom'
 
 //Components
+import Nav from './Components/Nav';
 import Destinations from './Components/Destinations';
 import Welcome from './Components/Welcome';
 import { LoadScript } from '@react-google-maps/api';
@@ -18,7 +21,6 @@ import { useState, useEffect } from "react";
 const destinationName = destinationsData.map((destination) => {
   return destination.name
 })
-
 const latitude =  destinationsData.map((destination) => {
   return destination.lat
 })
@@ -66,26 +68,39 @@ function App() {
   }
 
   //loop through destinationName array, return destination index, increment by one, if index is greater than last index in array, return to index of 0.
-  const [welcomeToggle, setWelcomeToggle] = useState(true)
   
-
+  const [welcomeToggle, setWelcomeToggle] = useState(true)
+  const [destinationsToggle, setDestinationsToggle] = useState(false)
 
   return (
     <div className="App">
+      <Nav />
       <div className='App-container'>
       </div>
       
-      <Welcome
+      {welcomeToggle && <Welcome
           handleChange={handleChange}
           handleSubmit={handleSubmit}
           location={location}
           destinationResult={destinationResult}
           center={center}
-      />   
+          welcomeToggle={welcomeToggle}
+        setWelcomeToggle={setWelcomeToggle}
+        destinationsToggle={destinationsToggle}
+        setDestinationsToggle={setDestinationsToggle}
+        
+      />}  
+      
+      {destinationsToggle && <Destinations
+                    destinationResult={destinationResult}
+                    center={center}
+                    handleSubmit={handleSubmit}
+                    handleChange={handleChange}
+                    location={location}
+             />}
       
       <LoadScript
-                googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY} />
-            
+                googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY} />    
     </div>
   );
 }

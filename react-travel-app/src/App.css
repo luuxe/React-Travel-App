@@ -16,9 +16,10 @@
   justify-content: right;
 }
 
-.Welcome-container {
+.welcome-container {
   width: 100%;
   height: 100vh;
+  border: 2px solid red;
   
 }
 
@@ -39,19 +40,18 @@ video {
   justify-content: center;
   align-items: center;
   color: white;
-  background-color: rgba(0,0,0,.25);
+  background-color: rgba(0,0,0,.15);
 }
 
 .Welcome-text {
   margin-bottom: 20px;
-  font-size: 15px;
+  font-size: 32px;
 }
 
 .feeling-lucky-btn {
-  font-size: 13px;
+  font-size: 15px;
   padding: 10px;
   color: white;
   background-color: black;
   border: none;
 }
-

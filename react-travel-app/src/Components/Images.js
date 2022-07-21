@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const Images = ({ location }) => {
+const Images = ({ location, destinationResult }) => {
 
     const [images, setImages] = useState([])
   
@@ -10,7 +10,7 @@ const Images = ({ location }) => {
     const searchPhotos = {
         key: process.env.REACT_APP_UNSPLASH_API_KEY,
         api: 'https://api.unsplash.com/search/photos/?',
-        page: Math.floor(Math.random() * 10),
+        page: 1,
         location: location
       }
     
@@ -29,12 +29,10 @@ const Images = ({ location }) => {
             })
             .then(data => {
                 setImages(data.results)
-                console.log(searchPhotos.location)
             })
             .catch(err => {
             console.log(err)
         })
-        console.log(searchPhotos.page)
 
     }
     
@@ -48,13 +46,12 @@ const Images = ({ location }) => {
                 {images.map((image) => (
                     //key must be in parent element
                     <div key={image.id} className='card-body'>
-                    <img
-                    src={image.urls.regular}
+                        <img
+                            src={image.urls.regular}
                             alt={image.alt_description}
-                            
                         />  
                     </div>
-            ))}   
+                ))} 
             </Carousel>
         </div>
     );
