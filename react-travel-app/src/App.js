@@ -6,16 +6,13 @@ import '../src/Components/Images.css'
 import '../src/Components/nav-footer.css'
 import videoBackground from '../src/assets/videoBackground.mp4'
 
-//Router
-import { Routes, Route, Link } from 'react-router-dom'
 
 //Components
-import Nav from './Components/Nav';
 import Destinations from './Components/Destinations';
 import Welcome from './Components/Welcome';
 import { LoadScript } from '@react-google-maps/api';
 import { destinationsData } from './data.js'
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 
 const destinationName = destinationsData.map((destination) => {

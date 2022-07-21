@@ -1,8 +1,5 @@
-import videoBackground from '../assets/videoBackground.mp4'
 
 const Welcome = ({ handleChange, welcomeToggle, setWelcomeToggle, destinationsToggle, setDestinationsToggle }) => {
-    
-    {/* <video src={videoBackground} autoPlay loop muted /> */}
 
     return (
             <div className = 'Welcome-content'>

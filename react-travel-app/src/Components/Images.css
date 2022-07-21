@@ -3,10 +3,24 @@
     display: flex;
     justify-content: space-around;
     font-size: 25px;
-    color:rgba(0, 0, 0, 0.616);
+    color:rgba(255, 255, 255, 0.7);
 }
 
+.like-btn:hover {
+    color: rgb(255, 47, 82);
+}
 
+.dice-btn:hover {
+    color:white;
+}
+
+.map-btn:hover {
+    color:white;
+}
+
+.card-container {
+    background-color: rgba(255, 255, 255, 0.4);
+}
 
 .card {
     display: flex;
@@ -24,11 +38,11 @@
 
 .card-body{
     max-height: 500px;
-    border-radius: 6%;
+    border-radius: 25px;
 }
 
  .card-body img {
-    border-radius: 6%;
+    border-radius: 25px;
 } 
 
 .carousel-status {

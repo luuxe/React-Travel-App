@@ -15,9 +15,9 @@ export const destinationsData = [
         lng: '-86.7341',
     },
     {
-        name: 'Dubai, UAE',
-        lat: '25.276987',
-        lng: '55.296249',
+        name: 'Petra, Jordan',
+        lat: '30.328960',
+        lng: '35.444832',
     },
     {
         name: 'Milos, Greece',
@@ -30,14 +30,14 @@ export const destinationsData = [
         lng: '-7.992047',
     },
     {
-        name: 'Sabi Sands, South Africa',
+        name: 'Kruger, South Africa',
         lat: '-25.3551',
         lng: '31.8894',
     },
     {
         name: 'Koh Phi Phi, Thailand',
-        lat: '9.512017',
-        lng: '100.013593',
+        lat: '7.7407',
+        lng: '98.7784',
     },
     {
         name: 'El Calafete, Argentina',

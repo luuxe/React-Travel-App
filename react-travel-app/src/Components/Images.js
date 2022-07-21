@@ -10,7 +10,7 @@ const Images = ({ location, destinationResult }) => {
     const searchPhotos = {
         key: process.env.REACT_APP_UNSPLASH_API_KEY,
         api: 'https://api.unsplash.com/search/photos/?',
-        page: 1,
+        page: Math.floor(Math.random() * 5),
         location: location
       }
     

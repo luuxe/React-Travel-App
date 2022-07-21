@@ -4,13 +4,16 @@ import Images from './Images';
 import { useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDice, faMapLocationDot, faHeart } from '@fortawesome/free-solid-svg-icons'
-import Footer from './Footer';
 import Nav from './Nav'
 
 const Destinations = ({ destinationResult, center, handleSubmit, handleChange, location }) => {
 
     const [mapToggle, setMapToggle] = useState(false)
     const [imagesToggle, setImagesToggle] = useState(true)
+
+    const addFav = () => {
+        alert('added to favorites!')
+    }
 
     return (
         <>
@@ -23,12 +26,12 @@ const Destinations = ({ destinationResult, center, handleSubmit, handleChange, l
                     setMapToggle(!mapToggle)
                     setImagesToggle(!imagesToggle)
                         }} />
-                <FontAwesomeIcon icon={faHeart} className='like-btn' />
+                <FontAwesomeIcon icon={faHeart} className='like-btn' onClick={addFav} />
             </nav>
             
            
             {!imagesToggle && mapToggle && <Map center={center} />}
-                        {console.log(center)}
+
             {imagesToggle && <Images location={location} />}
             
                 {/* <div className='title-container'> */}
