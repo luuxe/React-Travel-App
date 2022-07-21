@@ -47,8 +47,6 @@ function App() {
       lng: Number(longitude[i])
     })
   
-  console.log(center)
-
   function handleSubmit(e) {
     incrementIndex(i + 1)
     if (i === destinationName.length) {
@@ -74,7 +72,7 @@ function App() {
 
   return (
     <div className="App">
-      <video src={videoBackground} autoPlay playsInline loop muted controls='false' />
+      <video src={videoBackground} autoPlay playsInline loop muted controls={false} />
       <div className='App-container'>
       </div>
      

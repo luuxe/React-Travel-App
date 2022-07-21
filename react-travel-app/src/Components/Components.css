@@ -11,15 +11,10 @@
 .card-container {
     border-radius: 25px;
     width: 500px;
-    height: 800px;
+    height: 750px;
     max-width: 700px;
     margin-top: 3rem;
 }
-
-/* .title-container {
-    max-width: 100%;
-    
-} */
 
 .destination-title {
     font-size: 58px;
@@ -43,9 +38,8 @@
         padding: 20px 0px 10px 0px;
     }
     .card-container {
-        height: 85vh;
-        margin-top: 3rem;
-        margin-bottom: 1.5rem;
+        height: 80vh;
+        margin: 1rem 1rem 1.5rem 1rem;
     }
     
 }
