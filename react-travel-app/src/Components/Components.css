@@ -11,7 +11,7 @@
 .card-container {
     border-radius: 25px;
     width: 500px;
-    height: 750px;
+    height: 800px;
     max-width: 700px;
     margin-top: 3rem;
 }
@@ -39,7 +39,13 @@
 
 @media only screen and (max-width: 500px) {
     .destination-title {
-        font-size: 60px;
+        font-size: 55px;
+        padding: 20px 0px 10px 0px;
+    }
+    .card-container {
+        height: 85vh;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
     }
     
 }
