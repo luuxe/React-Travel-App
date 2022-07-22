@@ -52,8 +52,13 @@
     border-radius: 25px;
 }
 
- .card-body img {
+.control-arrow {
+    height: inherit;
+}
+
+.card-body img {
     border-radius: 25px;
+    object-fit: contain;
 } 
 
 .carousel-status {
