@@ -35,7 +35,7 @@ const Destinations = ({ destinationResult, center, handleSubmit, handleChange, l
            
             {!imagesToggle && mapToggle && <Map center={center} />}
             
-                    <div className='destinations-content'>
+                <div className='destinations-content'>
                 {imagesToggle && <Images location={location} />}
                     
                 {destinationTitle && <h1 className="destination-title"> {destinationResult}</h1>}

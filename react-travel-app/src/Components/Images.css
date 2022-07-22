@@ -43,7 +43,7 @@
 
 .carousel {
     max-width: 400px;
-    max-height: 700px;
+    max-height: 600px;
     border-radius: 25px;
 }
 
@@ -58,7 +58,7 @@
 
 .card-body img {
     border-radius: 25px;
-    height: inherit;
+    max-height: fit-content;
 } 
 
 .carousel-status {
@@ -78,7 +78,7 @@
     }
 
     .card-body{
-        max-height: 400px;
+        max-height: 450px;
     }
     
 }
