@@ -1,8 +1,7 @@
 # Random Travel Generator!
 ### a fun and simple app to inspire your next adventure
 
-created as my second project while attending General Assembly: Software Engineering Immersive
-=======
+### created as my second project while attending General Assembly: Software Engineering Immersive
 - Built with ReactJS
 - fully responsive on mobile and desktop
 
