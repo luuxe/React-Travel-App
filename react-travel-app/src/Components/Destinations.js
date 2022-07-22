@@ -1,7 +1,7 @@
 
 import Map from './Map'
 import Images from './Images';
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDice, faMapLocationDot, faHeart } from '@fortawesome/free-solid-svg-icons'
 import Footer from './Footer'
@@ -51,13 +51,13 @@ const Destinations = ({ destinationResult, center, handleSubmit, location }) => 
                         }}
                         >Added to favorites!</p> : null}
                     
-                        {destinationTitle && <h1 className="destination-title"> {destinationResult}</h1>}
-                        
+                        {destinationTitle && <h1 className="destination-title"> {destinationResult}</h1>}               
 
             </div>
                 </div>
             </div>
-            <Footer />
+            <Footer
+            />
     </>
     );
 };

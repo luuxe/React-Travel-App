@@ -1,5 +1,6 @@
 
-const Welcome = ({ handleChange, welcomeToggle, setWelcomeToggle, destinationsToggle, setDestinationsToggle }) => {
+
+const Welcome = ({welcomeToggle, setWelcomeToggle, destinationsToggle, setDestinationsToggle }) => {
 
     return (
             <div className = 'Welcome-content'>
@@ -9,7 +10,7 @@ const Welcome = ({ handleChange, welcomeToggle, setWelcomeToggle, destinationsTo
                 <button className='feeling-lucky-btn' onClick={(() => {
                     setDestinationsToggle(!destinationsToggle);
                     setWelcomeToggle(!welcomeToggle)
-                })} onChange={handleChange}>Find my next destination</button>
+                })}>Find my next destination</button>
 
 
             </div>
