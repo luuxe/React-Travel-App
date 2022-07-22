@@ -25,7 +25,7 @@ const longitude =  destinationsData.map((destination) => {
   return destination.lng
 })
 
-const randomIndex = Math.floor(Math.random() * destinationName.length - 1)
+const randomIndex = Math.floor(Math.random() * (destinationName.length - 1))
 
 function App() {
 
@@ -47,7 +47,8 @@ function App() {
       lng: Number(longitude[i])
     })
   
-  function handleSubmit(e) {
+  function handleSubmit() {
+    console.log(i)
     incrementIndex(i + 1)
     if (i === destinationName.length) {
      incrementIndex(0)
@@ -65,6 +66,7 @@ function App() {
     setDestinationResult(destinationName[Math.floor(Math.random() * destinationName.length)])
   }
 
+  console.log(destinationResult)
   //loop through destinationName array, return destination index, increment by one, if index is greater than last index in array, return to index of 0.
   
   const [welcomeToggle, setWelcomeToggle] = useState(true)
@@ -97,7 +99,6 @@ function App() {
                     destinationResult={destinationResult}
                     center={center}
                     handleSubmit={handleSubmit}
-                    // handleChange={handleChange}
                     location={location}
              />}
       

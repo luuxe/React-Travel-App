@@ -13,8 +13,6 @@ const Destinations = ({ destinationResult, center, handleSubmit, location }) => 
     const [destinationTitle, setDestinationTitle] = useState(true)
     const [liked, setLiked] = useState(false)
 
-    const likedArr= []
-
     const addFav = () => {
         setLiked(true)
     }

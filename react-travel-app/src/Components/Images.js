@@ -6,6 +6,7 @@ const Images = ({ location, destinationResult }) => {
 
     const [images, setImages] = useState([])
 
+
     const searchPhotos = {
         key: process.env.REACT_APP_UNSPLASH_API_KEY,
         api: 'https://api.unsplash.com/search/photos/?',
@@ -14,27 +15,24 @@ const Images = ({ location, destinationResult }) => {
       }
     
         //  const getImages = async () => {
-        //  const res = await fetch(`${searchPhotos.api}page=${searchPhotos.page}&query=${searchPhotos.location}&orientation=portrait&client_id=${searchPhotos.key}`)
+        //  const res = await fetch(`${searchPhotos.api}page=${searchPhotos.page}&per_page=5&query=${searchPhotos.location}&orientation=portrait&client_id=${searchPhotos.key}`)
         //      const data = await res.json()
         //      setImages(data.results)
-        //      console.log(searchPhotos.location)
         //  }
     
-    const getImages = () => {
-        fetch(`${searchPhotos.api}page=${searchPhotos.page}&per_page=5&query=${searchPhotos.location}&orientation=portrait&client_id=${searchPhotos.key}`)
-
-            .then(res => {
-            return res.json()
+        const getImages = () => {
+            fetch(`${searchPhotos.api}page=${searchPhotos.page}&per_page=5&query=${searchPhotos.location}&orientation=portrait&client_id=${searchPhotos.key}`)
+                .then(res => {
+                return res.json()
+                })
+                .then(data => {
+                    setImages(data.results)
+                })
+                .catch(err => {
+                console.log(err)
             })
-            .then(data => {
-                setImages(data.results)
-            })
-            .catch(err => {
-            console.log(err)
-        })
 
     }
-    
          useEffect(() => {
           getImages()
          }, [location])
