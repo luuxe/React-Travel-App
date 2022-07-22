@@ -10,9 +10,12 @@ const Destinations = ({ destinationResult, center, handleSubmit, handleChange, l
 
     const [mapToggle, setMapToggle] = useState(false)
     const [imagesToggle, setImagesToggle] = useState(true)
+    const [liked, setLiked] = useState(false)
+
+    const likedArr= []
 
     const addFav = () => {
-        alert('added to favorites!')
+        
     }
 
     return (
@@ -27,15 +30,13 @@ const Destinations = ({ destinationResult, center, handleSubmit, handleChange, l
                         }} />
                 <FontAwesomeIcon icon={faHeart} className='like-btn' onClick={addFav} />
             </nav>
-            
            
             {!imagesToggle && mapToggle && <Map center={center} />}
 
             {imagesToggle && <Images location={location} />}
-            
-                {/* <div className='title-container'> */}
+                    
                         <h1 className="destination-title">  {destinationResult}</h1>
-                {/* </div> */}
+
                 </div>
                 <Footer />
             </div>

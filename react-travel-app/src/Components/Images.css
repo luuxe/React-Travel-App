@@ -4,18 +4,28 @@
     justify-content: space-around;
     font-size: 30px;
     color:rgba(255, 255, 255, 0.8);
+    grid-area: 1 / 1 / 2 / 2;
 }
 
 .like-btn:hover {
+    color: rgb(255, 47, 82);
+}
+.like-btn:active {
     color: rgb(255, 47, 82);
 }
 
 .dice-btn:hover {
     color:white;
 }
+.dice-btn:active {
+    color:rgb(2, 2, 2);
+}
 
 .map-btn:hover {
     color:white;
+}
+.map-btn:active {
+    color:rgb(2, 2, 2);
 }
 
 .card-container {
@@ -63,7 +73,7 @@
     }
 
     .card-body{
-        max-height: 450px;
+        max-height: 400px;
     }
     
 }
