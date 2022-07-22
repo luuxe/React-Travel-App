@@ -30,3 +30,11 @@ https://randomtravel.netlify.app/
 - implement more transition effects to combat choppy UI
 - create additional functionality for "Add to favorites", return a list of user's favorites and allow user to navigate to linked destination
 - embedded results from travel websites (Expedia, Trip Advisor, etc) for hotels, excursions, flights
+
+# How I overcame objectives and roadblocks?
+on the floor with my whiteboard. I am a visual learner and every time I was able to sit down with some markers and draw out the problem, I was able to solve the problem in minutes.
+
+![fixinbugs](https://user-images.githubusercontent.com/104602440/180470021-3ce157b7-5749-4e7a-92a6-193fc1321da1.jpeg)
+
+# Original wireframe
+![wireframe-project2](https://user-images.githubusercontent.com/104602440/180469146-fac27ef0-7092-4a08-9813-016bdc2f288d.jpg)
