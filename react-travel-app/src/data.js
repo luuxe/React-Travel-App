@@ -40,9 +40,9 @@ export const destinationsData = [
         lng: '98.7784',
     },
     {
-        name: 'El Calafete, Argentina',
-        lat: '-50.333332',
-        lng: '-72.249999',
+        name: 'Cusco, Peru',
+        lat: '-13.52264',
+        lng: '-71.96734',
     },
     {
         name: 'Zermatt, Switzerland',

@@ -44,7 +44,6 @@ const Destinations = ({ destinationResult, center, handleSubmit, location }) => 
                             color: 'red',
                             padding: 0,
                             margin: 0,
-                            zIndex: 2,
                             fontSize: 12,
                             textAlign: 'center',
                             display: liked ? 'block' : 'none',
