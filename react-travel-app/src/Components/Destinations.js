@@ -15,7 +15,7 @@ const Destinations = ({ destinationResult, center, handleSubmit, handleChange, l
     const likedArr= []
 
     const addFav = () => {
-        
+        console.log('liked!')
     }
 
     return (
@@ -36,9 +36,7 @@ const Destinations = ({ destinationResult, center, handleSubmit, handleChange, l
             {imagesToggle && <Images location={location} />}
                     
                         <h1 className="destination-title">  {destinationResult}</h1>
-
                 </div>
-                <Footer />
             </div>
     </>
     );

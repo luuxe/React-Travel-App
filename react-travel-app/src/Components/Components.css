@@ -3,6 +3,7 @@
     height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     backdrop-filter: blur(5px);
     top: 0;
     position: absolute;
@@ -13,11 +14,10 @@
     width: 500px;
     height: 750px;
     max-width: 700px;
-    margin-top: 3rem;
 }
 
 .destination-title {
-    font-size: 58px;
+    font-size: 55px;
     color: black;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 300;
@@ -42,13 +42,13 @@
     }
     .card-container {
         height: fit-content;
-        margin: 1rem 1rem 1.5rem 1rem;
+        margin: 0 1rem 1.5rem 1rem;
     }
     
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 400px) {
     .destination-title {
-        font-size: 43px;
+        font-size: 38px;
     }
     
 }
