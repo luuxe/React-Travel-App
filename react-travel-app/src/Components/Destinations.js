@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDice, faMapLocationDot, faHeart } from '@fortawesome/free-solid-svg-icons'
 import Footer from './Footer'
-import Alert from 'react-bootstrap/Alert'
 
 const Destinations = ({ destinationResult, center, handleSubmit, location }) => {
 
