@@ -3,7 +3,7 @@ const Welcome = ({ handleChange, welcomeToggle, setWelcomeToggle, destinationsTo
 
     return (
             <div className = 'Welcome-content'>
-                        <p className='Welcome-text'>Not sure where to travel next? Let us help.</p>
+                        <p className='Welcome-text'>Not sure where to go next? Let us help.</p>
                         
 
                 <button className='feeling-lucky-btn' onClick={(() => {

@@ -38,11 +38,11 @@ const Destinations = ({ destinationResult, center, handleSubmit, handleChange, l
                 <div className='destinations-content'>
                 {imagesToggle && <Images location={location} />}
                     
-                {destinationTitle && <h1 className="destination-title"> {destinationResult}</h1>}
+                        {destinationTitle && <h1 className="destination-title"> {destinationResult}</h1>}
             </div>
                 </div>
-        <Footer />
-    </div>
+            </div>
+            <Footer />
     </>
     );
 };
