@@ -10,6 +10,7 @@ const Destinations = ({ destinationResult, center, handleSubmit, handleChange, l
 
     const [mapToggle, setMapToggle] = useState(false)
     const [imagesToggle, setImagesToggle] = useState(true)
+    const [destinationTitle, setDestinationTitle] = useState(true)
     const [liked, setLiked] = useState(false)
 
     const likedArr= []
@@ -26,18 +27,21 @@ const Destinations = ({ destinationResult, center, handleSubmit, handleChange, l
                 <FontAwesomeIcon icon={faDice} className='dice-btn' onClick={handleSubmit} />
                 <FontAwesomeIcon icon={faMapLocationDot} className='map-btn' onClick={() => {
                     setMapToggle(!mapToggle)
-                    setImagesToggle(!imagesToggle)
+                            setImagesToggle(!imagesToggle)
+                            setDestinationTitle(!destinationTitle)
                         }} />
                 <FontAwesomeIcon icon={faHeart} className='like-btn' onClick={addFav} />
             </nav>
            
             {!imagesToggle && mapToggle && <Map center={center} />}
-
-            {imagesToggle && <Images location={location} />}
+            
+                    <div className='destinations-content'>
+                {imagesToggle && <Images location={location} />}
                     
-                        <h1 className="destination-title">  {destinationResult}</h1>
-                </div>
+                {destinationTitle && <h1 className="destination-title"> {destinationResult}</h1>}
             </div>
+            </div>
+    </div>
     </>
     );
 };

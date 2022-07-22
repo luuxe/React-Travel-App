@@ -48,7 +48,7 @@
 }
 
 .card-body{
-    max-height: 500px;
+    max-height: 60vh;
     border-radius: 25px;
 }
 
@@ -58,7 +58,7 @@
 
 .card-body img {
     border-radius: 25px;
-    object-fit: contain;
+    height: inherit;
 } 
 
 .carousel-status {
