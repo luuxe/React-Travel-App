@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Spinner from 'react-bootstrap/Spinner'
 
 const Images = ({ location, destinationResult }) => {
 
     const [images, setImages] = useState([])
-  
+    const [loading, setLoading] = useState(false)
 
     const searchPhotos = {
         key: process.env.REACT_APP_UNSPLASH_API_KEY,
@@ -28,6 +29,7 @@ const Images = ({ location, destinationResult }) => {
             return res.json()
             })
             .then(data => {
+                setLoading(true)
                 setImages(data.results)
             })
             .catch(err => {
@@ -42,6 +44,7 @@ const Images = ({ location, destinationResult }) => {
 
     return (
         <div className='card'>
+            {loading ? (
             <Carousel className='carousel' autoPlay={true} infiniteLoop={true} interval={2000} showThumbs={false} >
                 {images.map((image) => (
                     //key must be in parent element
@@ -52,7 +55,8 @@ const Images = ({ location, destinationResult }) => {
                         />  
                     </div>
                 ))} 
-            </Carousel>
+                </Carousel>
+                ) : (<Spinner animation="border" />)}
         </div>
     );
 };
