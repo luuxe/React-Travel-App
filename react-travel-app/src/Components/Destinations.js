@@ -40,7 +40,8 @@ const Destinations = ({ destinationResult, center, handleSubmit, handleChange, l
                     
                 {destinationTitle && <h1 className="destination-title"> {destinationResult}</h1>}
             </div>
-            </div>
+                </div>
+        <Footer />
     </div>
     </>
     );
