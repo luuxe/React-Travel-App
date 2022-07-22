@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-around;
     font-size: 30px;
-    color:rgba(255, 255, 255, 0.8);
+    color:rgba(255, 255, 255, 0.836);
     grid-area: 1 / 1 / 2 / 2;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .dice-btn:hover {
-    color:white;
+    color:rgb(0, 0, 0);
 }
 .dice-btn:active {
     color:rgb(2, 2, 2);
@@ -59,7 +59,7 @@
 
 .card-body img {
     border-radius: 25px;
-    max-height: fit-content;
+    
 } 
 
 .carousel-status {
@@ -74,12 +74,14 @@
 
 @media only screen and (max-width: 500px) {
     .carousel {
-        max-width: 250px;
+        max-width: 300px;
         max-height: 400px;
     }
 
     .card-body img{
-        max-height: 300px;
+        max-height: 450px;
     }
-    
+    .destinations-nav {
+        font-size: 26px;
+    }
 }
