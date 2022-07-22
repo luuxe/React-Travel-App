@@ -4,7 +4,6 @@
 import './App.css';
 import '../src/Components/Components.css'
 import '../src/Components/Images.css'
-import '../src/Components/nav-footer.css'
 import videoBackground from '../src/assets/videoBackground.mp4'
 
 
@@ -13,7 +12,8 @@ import Destinations from './Components/Destinations';
 import Welcome from './Components/Welcome';
 import { LoadScript } from '@react-google-maps/api';
 import { destinationsData } from './data.js'
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Loading from './Components/Loading';
 
 
 const destinationName = destinationsData.map((destination) => {
@@ -30,26 +30,18 @@ const randomIndex = Math.floor(Math.random() * (destinationName.length - 1))
 
 function App() {
 
-  //state for destination title
   const [destinationResult, setDestinationResult] = useState(destinationName[randomIndex])
 
-  //state for incrementing data to return new destination
   const [i, incrementIndex] = useState(randomIndex)
 
-    //state for images
-  const [images, setImages] = useState([])
-  
-  //state for location query param in url
   const [location, setLocation] = useState(destinationResult)
 
-    //state for map center coords
     const [center, setCenter] = useState({
       lat: Number(latitude[i]),
       lng: Number(longitude[i])
     })
   
   function handleSubmit() {
-    console.log(i)
     incrementIndex(i + 1)
     if (i === destinationName.length) {
      incrementIndex(0)
@@ -67,35 +59,43 @@ function App() {
     setDestinationResult(destinationName[Math.floor(Math.random() * destinationName.length)])
   }
 
-  console.log(destinationResult)
-  //loop through destinationName array, return destination index, increment by one, if index is greater than last index in array, return to index of 0.
-  
   const [welcomeToggle, setWelcomeToggle] = useState(true)
   const [destinationsToggle, setDestinationsToggle] = useState(false)
 
+
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 2000)
+  }, [])
+
   return (
     <div className="App">
-      <video
-        loop
-        muted
-        autoPlay
-        playsInline
-        src={videoBackground} />
-      <div className='App-container'>
-      </div>
-     
-      {welcomeToggle && <Welcome
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
-          location={location}
-          destinationResult={destinationResult}
-          center={center}
-          welcomeToggle={welcomeToggle}
-          setWelcomeToggle={setWelcomeToggle}
-          destinationsToggle={destinationsToggle}
-          setDestinationsToggle={setDestinationsToggle}   
-      />}  
-      
+      {loading === false ? (
+  <>
+          <video
+              loop
+              muted
+              autoPlay
+              playsInline
+              src={videoBackground} />
+          
+            {welcomeToggle && <Welcome
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+                location={location}
+                destinationResult={destinationResult}
+                center={center}
+                welcomeToggle={welcomeToggle}
+                setWelcomeToggle={setWelcomeToggle}
+                destinationsToggle={destinationsToggle}
+                setDestinationsToggle={setDestinationsToggle}   
+          />}  
+      </>
+  
+    ) : (
+      <Loading />
+    )}
       {destinationsToggle && <Destinations
           destinationResult={destinationResult}
           center={center}
@@ -111,3 +111,5 @@ function App() {
 }
 
 export default App;
+
+
