@@ -1,6 +1,16 @@
 # Random Travel Generator!
 ### a fun and simple app to inspire your next adventure
+<<<<<<< HEAD
 created as my second project while attending General Assembly: Software Engineering Immersive
+=======
+- Built with ReactJS
+- fully responsive on mobile and desktop
+
+
+
+
+
+>>>>>>> 56bf319 (final project commit)
 
 https://randomtravel.netlify.app/
 
