@@ -2,7 +2,7 @@
 const Footer = () => {
     return (
         <footer className='footer'>
-            <a href='/'>site logo</a>
+            <a href='/' style={{fontSize: '18px'}}>HOME</a>
         </footer>
     );
 };
