@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import {motion} from 'framer-motion'
 
 const Images = ({ location, destinationResult }) => {
 
@@ -13,13 +14,7 @@ const Images = ({ location, destinationResult }) => {
         page: Math.floor(Math.random() * 5),
         location: location
       }
-    
-        //  const getImages = async () => {
-        //  const res = await fetch(`${searchPhotos.api}page=${searchPhotos.page}&per_page=5&query=${searchPhotos.location}&orientation=portrait&client_id=${searchPhotos.key}`)
-        //      const data = await res.json()
-        //      setImages(data.results)
-        //  }
-    
+
         const getImages = () => {
             fetch(`${searchPhotos.api}page=${searchPhotos.page}&per_page=5&query=${searchPhotos.location}&orientation=portrait&client_id=${searchPhotos.key}`)
                 .then(res => {
@@ -38,11 +33,11 @@ const Images = ({ location, destinationResult }) => {
          }, [location])
 
     return (
-        <div className='card'>
-            <Carousel className='carousel' autoPlay={true} infiniteLoop={true} interval={2000} showThumbs={false} >
+        <div className='card' >
+            <Carousel className='carousel' autoPlay={true} infiniteLoop={true} interval={2500} showThumbs={false} >
                 {images.map((image) => (
                     //key must be in parent element
-                    <div key={image.id} className='card-body'>
+                    <div key={image.id} className='card-body' whileHover={{ scale: 1 }}>
                         <img
                             src={image.urls.regular}
                             alt={image.alt_description}

@@ -1,13 +1,16 @@
 
 import Map from './Map'
 import Images from './Images';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDice, faMapLocationDot, faHeart } from '@fortawesome/free-solid-svg-icons'
 import Footer from './Footer'
+import Loading from './Loading'
+
+import { motion } from 'framer-motion'
 
 const Destinations = ({ destinationResult, center, handleSubmit, location }) => {
-
+    const [loading, setLoading] = useState(true)
     const [mapToggle, setMapToggle] = useState(false)
     const [imagesToggle, setImagesToggle] = useState(true)
     const [destinationTitle, setDestinationTitle] = useState(true)
@@ -20,11 +23,25 @@ const Destinations = ({ destinationResult, center, handleSubmit, location }) => 
         setTimeout(function () {
           setLiked(false);
         }, 1000);
+    
+        useEffect(() => {
+            setTimeout(() => setLoading(false), 1000)
+          }, [])
 
     return (
         <>
-        <div className='wrapper'>
-        <div className='card-container'>
+
+            <div className='wrapper'>
+            
+                <motion.div className='card-container'
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 1.2,
+                  delay: 0.5,
+                  ease: [0, 0.71, 0.2, 1.01]
+                }}
+                >
             <nav className='destinations-nav'>
                 <FontAwesomeIcon icon={faDice} className='dice-btn' onClick={handleSubmit} />
                         <FontAwesomeIcon icon={faMapLocationDot} className='map-btn' onClick={() => {
@@ -33,29 +50,33 @@ const Destinations = ({ destinationResult, center, handleSubmit, location }) => 
                             setDestinationTitle(!destinationTitle)
                         }} />
                         <FontAwesomeIcon icon={faHeart} className='like-btn' onClick={addFav} />
-            </nav>
+                    </nav>
                     
                     {!imagesToggle && mapToggle && <Map center={center} />}
             
-                <div className='destinations-content'>
-
+                     {loading === false ? (
+                    <div className='destinations-content'>
                         {imagesToggle && <Images location={location} />}
                         {liked ? <p className='addToFav' style={{
                             color: 'red',
                             padding: 0,
-                            margin: 0,
+                            marginTop: 0,
+                            marginBottom: 5,
                             fontSize: 12,
                             textAlign: 'center',
                             display: liked ? 'block' : 'none',
                         }}
                         >Added to favorites!</p> : null}
-                    
-                        {destinationTitle && <h1 className="destination-title"> {destinationResult}</h1>}               
+                        {destinationTitle && <h1 className="destination-title"> {destinationResult}</h1>}
 
+                    </div>
+                   ) : (
+                    <Loading />
+                  )}  
+
+                </motion.div>
             </div>
-                </div>
-            </div>
-            <Footer
+            <Footer liked={liked}
             />
     </>
     );
