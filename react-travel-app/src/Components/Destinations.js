@@ -22,7 +22,7 @@ const Destinations = ({ destinationResult, center, handleSubmit, location }) => 
 
         setTimeout(function () {
           setLiked(false);
-        }, 1000);
+        }, 2000);
     
         useEffect(() => {
             setTimeout(() => setLoading(false), 1000)
@@ -58,12 +58,6 @@ const Destinations = ({ destinationResult, center, handleSubmit, location }) => 
                     <div className='destinations-content'>
                         {imagesToggle && <Images location={location} />}
                         {liked ? <p className='addToFav' style={{
-                            color: 'red',
-                            padding: 0,
-                            marginTop: 0,
-                            marginBottom: 5,
-                            fontSize: 12,
-                            textAlign: 'center',
                             display: liked ? 'block' : 'none',
                         }}
                         >Added to favorites!</p> : null}
@@ -76,7 +70,7 @@ const Destinations = ({ destinationResult, center, handleSubmit, location }) => 
 
                 </motion.div>
             </div>
-            <Footer liked={liked}
+            <Footer
             />
     </>
     );
