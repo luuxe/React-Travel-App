@@ -9,12 +9,7 @@
     position: absolute;
 }
 
-.card-container {
-    border-radius: 25px;
-    width: 500px;
-    max-width: 500px;
-    max-height: 700px;
-}
+
 
 
 .destination-title {
@@ -23,7 +18,6 @@
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 300;
     text-transform: uppercase;
-    padding: 0rem;
     text-align: center;
 }
 
@@ -35,8 +29,8 @@
 }
 
 .footer {
+    position: fixed;
     bottom: 0;
-    position: absolute;
 }
 
 .footer a {
@@ -46,7 +40,7 @@
 @media only screen and (max-width: 500px) {
     .destination-title {
         font-size: 46px;
-        padding: 20px 0px 10px 0px;
+        /* padding: 20px 0px 10px 0px; */
     }
 
     .card-container {

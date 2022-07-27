@@ -1,4 +1,3 @@
-import Loading from "./Loading";
 import { motion } from 'framer-motion'
 const Welcome = ({welcomeToggle, setWelcomeToggle, destinationsToggle, setDestinationsToggle }) => {
 

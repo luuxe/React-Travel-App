@@ -47,6 +47,9 @@
 
 .card-container {
     background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+    max-width: 550px;
+    width: 80vw;
     height: 90vh;
   }
 
@@ -61,12 +64,11 @@
 
 .carousel {
     max-width: 400px;
-    max-height: 600px;
+    max-height: 500px;
     border-radius: 25px;
 }
 
 .card-body{
-    /* max-height: 400px; */
     height: 450px;
     border-radius: 25px;
 }
@@ -76,6 +78,8 @@
 }
 
 .card-body img {
+    max-width: 400px;
+    max-height: 450px;
     border-radius: 25px;
     animation-duration: 2s;
     animation-name: slidein;
@@ -104,13 +108,37 @@
 
 
 @media only screen and (max-width: 500px) {
+    .card-container{
+        margin: 0;
+
+    }
     .carousel {
         max-width: 300px;
         max-height: 400px;
     }
 
+    .card-body {
+        max-width: 300px;
+    }
     .card-body img{
-        max-height: 450px;
+        max-height: 400px;
+    }
+    
+    .destinations-nav {
+        font-size: 26px;
+    }
+}
+@media only screen and (max-width: 390px) {
+    .carousel {
+        max-width: 250px;
+        max-height: 400px;
+    }
+
+    .card-body {
+        max-width: 250px;
+    }
+    .card-body img{
+        max-height: 400px;
     }
     
     .destinations-nav {
