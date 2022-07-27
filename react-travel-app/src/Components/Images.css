@@ -119,6 +119,7 @@
 
     .card-body {
         max-width: 300px;
+        max-height: 500px;
     }
     .card-body img{
         max-height: 400px;
@@ -130,12 +131,13 @@
 }
 @media only screen and (max-width: 390px) {
     .carousel {
-        max-width: 250px;
+        max-width: 275px;
         max-height: 400px;
     }
 
     .card-body {
-        max-width: 250px;
+        max-width: 275px;
+        max-height: 400px;
     }
     .card-body img{
         max-height: 400px;
