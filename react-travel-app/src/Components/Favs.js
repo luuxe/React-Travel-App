@@ -1,6 +1,6 @@
 
 const Favs = ({ favsList, getFav }) => {
-
+    
     //implement delete destination from favorites
     
 

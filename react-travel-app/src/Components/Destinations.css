@@ -11,13 +11,46 @@
 
 .favs-nav {
     position: fixed;
+    z-index: 3;
     top: 0;
-    z-index: 2;
-    background-color: rgba(255, 255, 255, 0.529);
+    left: 0;
+    margin: 10px;
+    font-size: 18px;
+   
 }
 
-.favs-nav ul {
+.favs-container {
+    height: 100vh;
+    width: 65vw;
+    max-width: 300px;
+    position: fixed;
+    left: 0;
+    background-color: rgba(172, 221, 222, 0.862);
+    z-index: 2;
+}
+
+.favs-container h1 {
+    font-size: 20px;
+    text-align: left;
+    font-weight: 200;
+    margin: 9px 20px 20px 40px;
+}
+
+.favs-container ul {
     list-style-type: none;
+    margin-top: 20px;
+}
+
+.favs-container li {
+    text-align: left;
+    margin: 20px 10px 10px 10px;
+    padding: 5px;
+    background-color: aliceblue;
+}
+
+.favs-container li:hover {
+    color: rgb(188, 153, 112);
+    cursor: pointer;
 }
 
 .destination-title {

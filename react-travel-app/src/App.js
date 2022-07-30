@@ -56,12 +56,10 @@ function App() {
   }
   
   function getFav(e) {
-    const clickedFav = e.target.innerText
-    console.log(`${clickedFav} was clicked`)
     //get destination name
+    const clickedFav = e.target.innerText
     //find destination name in destinations array, return index 
     const foundIndex = destinationName.findIndex(el => el === clickedFav)
-    console.log(`${foundIndex} is the index of ${clickedFav}`)
     //set state of images, title, and map to matching index
     setDestinationResult(destinationName[foundIndex])
     setLocation(destinationName[foundIndex])

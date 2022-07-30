@@ -4,7 +4,7 @@ import Images from './Images';
 import Favs from './Favs'
 import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDice, faMapLocationDot, faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faDice, faMapLocationDot, faHeart, faBars} from '@fortawesome/free-solid-svg-icons'
 import Footer from './Footer'
 import Loading from './Loading'
 
@@ -22,10 +22,8 @@ const Destinations = ({ destinationResult, center, handleSubmit, location, getFa
 
     const addFav = () => {
         setLiked(true)
-        console.log(destinationResult)
         if (favsList.includes(destinationResult)) {
             console.log(`${destinationResult} already in favorites`)
-            console.log(favsList)
             } else {
             setFavsList([...favsList, destinationResult])
         }
@@ -50,10 +48,12 @@ const Destinations = ({ destinationResult, center, handleSubmit, location, getFa
 
                 <div className='favs-nav' onClick={() => {
                     setFavsToggle(!favsToggle)
-                }}><p>Favs</p>
+            }}><p className='favs-arrow-toggle'><FontAwesomeIcon icon={faBars} /></p>
+                
+                {/* {!favsToggle ? <FontAwesomeIcon icon={faChevronLeft}/> : <FontAwesomeIcon icon={faChevronRight} />  */}
 
-                {favsToggle ? <Favs favsList={favsList} getFav={getFav} /> : null }
                 </div>
+                {favsToggle ? <Favs favsList={favsList} getFav={getFav} /> : null }
                 
             <div className='wrapper'>
                 <motion.div className='card-container'
