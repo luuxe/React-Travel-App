@@ -15,9 +15,18 @@ const Destinations = ({ destinationResult, center, handleSubmit, location }) => 
     const [imagesToggle, setImagesToggle] = useState(true)
     const [destinationTitle, setDestinationTitle] = useState(true)
     const [liked, setLiked] = useState(false)
+    const [favs, setFavs] = useState([])
+
+    console.log(favs)
 
     const addFav = () => {
         setLiked(true)
+        console.log(destinationResult)
+        if (favs.includes(destinationResult)) {
+            console.log(`${destinationResult} already in favorites`)
+            } else {
+            setFavs([...favs, destinationResult])
+        }
     }
 
         setTimeout(function () {
