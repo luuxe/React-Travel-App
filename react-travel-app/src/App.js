@@ -2,7 +2,7 @@
 
 //stylesheets
 import './App.css';
-import '../src/Components/Components.css'
+import '../src/Components/Destinations.css'
 import '../src/Components/Images.css'
 import videoBackground from '../src/assets/videoBackground.mp4'
 

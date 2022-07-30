@@ -37,7 +37,7 @@ const Images = ({ location, destinationResult }) => {
             <Carousel className='carousel' autoPlay={true} infiniteLoop={true} interval={2500} showThumbs={false} >
                 {images.map((image) => (
                     //key must be in parent element
-                    <div key={image.id} className='card-body' whileHover={{ scale: 1 }}>
+                    <div key={image.id} className='card-body'>
                         <img
                             src={image.urls.regular}
                             alt={image.alt_description}
