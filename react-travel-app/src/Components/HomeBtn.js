@@ -1,5 +1,5 @@
 
-const Footer = () => {
+const HomeBtn = () => {
     return (
         <footer className='footer'>
             <a href='/'>HOME</a>
@@ -7,4 +7,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export default HomeBtn;

@@ -5,7 +5,7 @@ import Favs from './Favs'
 import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDice, faMapLocationDot, faHeart, faBars} from '@fortawesome/free-solid-svg-icons'
-import Footer from './Footer'
+import HomeBtn from './HomeBtn'
 import Loading from './Loading'
 
 import { motion } from 'framer-motion'
@@ -52,6 +52,8 @@ const Destinations = ({ destinationResult, center, handleSubmit, location, getFa
                 <p className='favs-arrow-toggle' onClick={() => {
                     setFavsToggle(!favsToggle)
                 }}><FontAwesomeIcon icon={faBars} /></p>
+                <HomeBtn
+            />
                 </nav>
                 {favsToggle ? <Favs favsList={favsList} getFav={getFav} isEmpty={isEmpty} /> : null }
                 
@@ -93,8 +95,6 @@ const Destinations = ({ destinationResult, center, handleSubmit, location, getFa
 
                 </motion.div>
             </div>
-            <Footer
-            />
     </>
     );
 };
