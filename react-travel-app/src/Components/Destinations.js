@@ -10,7 +10,7 @@ import Loading from './Loading'
 
 import { motion } from 'framer-motion'
 
-const Destinations = ({ destinationResult, center, handleSubmit, location, setDestinationsToggle, destinationsToggle  }) => {
+const Destinations = ({ destinationResult, center, handleSubmit, location, getFav }) => {
     const [loading, setLoading] = useState(true)
     const [mapToggle, setMapToggle] = useState(false)
     const [imagesToggle, setImagesToggle] = useState(true)
@@ -48,13 +48,14 @@ const Destinations = ({ destinationResult, center, handleSubmit, location, setDe
     return (
         <>
 
-            <div className='wrapper'>
-                <h2 className='favs-nav' onClick={() => {
+                <div className='favs-nav' onClick={() => {
                     setFavsToggle(!favsToggle)
-                }}>Favs</h2>
+                }}><p>Favs</p>
 
-                {favsToggle ? <Favs favsList={favsList} /> : null }
-            
+                {favsToggle ? <Favs favsList={favsList} getFav={getFav} /> : null }
+                </div>
+                
+            <div className='wrapper'>
                 <motion.div className='card-container'
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}

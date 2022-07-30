@@ -55,9 +55,22 @@ function App() {
     }
   }
   
-  function handleChange() {
-    setDestinationResult(destinationName[Math.floor(Math.random() * destinationName.length)])
-  }
+  function getFav(e) {
+    const clickedFav = e.target.innerText
+    console.log(`${clickedFav} was clicked`)
+    //get destination name
+    //find destination name in destinations array, return index 
+    const foundIndex = destinationName.findIndex(el => el === clickedFav)
+    console.log(`${foundIndex} is the index of ${clickedFav}`)
+    //set state of images, title, and map to matching index
+    setDestinationResult(destinationName[foundIndex])
+    setLocation(destinationName[foundIndex])
+    setCenter({ 
+        lat: Number(latitude[foundIndex]),
+        lng: Number(longitude[foundIndex])
+       })
+}
+
 
   const [welcomeToggle, setWelcomeToggle] = useState(true)
   const [destinationsToggle, setDestinationsToggle] = useState(false)
@@ -81,7 +94,6 @@ function App() {
               src={videoBackground} />
           
             {welcomeToggle && <Welcome
-                handleChange={handleChange}
                 handleSubmit={handleSubmit}
                 location={location}
                 destinationResult={destinationResult}
@@ -103,6 +115,7 @@ function App() {
         location={location}
         destinationsToggle={destinationsToggle}
         setDestinationsToggle={setDestinationsToggle} 
+        getFav={getFav}
 
       />}
         

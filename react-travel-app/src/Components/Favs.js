@@ -1,17 +1,15 @@
 
-const Favs = ({ favsList }) => {
+const Favs = ({ favsList, getFav }) => {
 
     //implement delete destination from favorites
-    function deleteFav(e) {
-        //console.log(e.target.innerText) - returns city name
-    }
+    
 
     return (
         <div className='favs-container'>
-            in Favs List
+            <h1>Favorite Destinations</h1>
             {favsList.map((fav) => (
                 <ul key={fav}>
-                    <li onClick={deleteFav}>{fav}</li>
+                    <li onClick={getFav}>{fav}</li>
                 </ul>
             ))}
 
