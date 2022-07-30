@@ -18,10 +18,12 @@ const Destinations = ({ destinationResult, center, handleSubmit, location, getFa
     const [liked, setLiked] = useState(false)
     const [favsList, setFavsList] = useState([])
     const [favsToggle, setFavsToggle] = useState(false)
+    const [isEmpty, setIsEmpty] = useState(true)
 
 
     const addFav = () => {
         setLiked(true)
+        setIsEmpty(false)
         if (favsList.includes(destinationResult)) {
             console.log(`${destinationResult} already in favorites`)
             } else {
@@ -46,14 +48,12 @@ const Destinations = ({ destinationResult, center, handleSubmit, location, getFa
     return (
         <>
 
-                <div className='favs-nav' onClick={() => {
+            <nav className='favs-nav'>
+                <p className='favs-arrow-toggle' onClick={() => {
                     setFavsToggle(!favsToggle)
-            }}><p className='favs-arrow-toggle'><FontAwesomeIcon icon={faBars} /></p>
-                
-                {/* {!favsToggle ? <FontAwesomeIcon icon={faChevronLeft}/> : <FontAwesomeIcon icon={faChevronRight} />  */}
-
-                </div>
-                {favsToggle ? <Favs favsList={favsList} getFav={getFav} /> : null }
+                }}><FontAwesomeIcon icon={faBars} /></p>
+                </nav>
+                {favsToggle ? <Favs favsList={favsList} getFav={getFav} isEmpty={isEmpty} /> : null }
                 
             <div className='wrapper'>
                 <motion.div className='card-container'
