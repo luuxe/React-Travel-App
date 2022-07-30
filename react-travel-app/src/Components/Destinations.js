@@ -1,6 +1,7 @@
 
 import Map from './Map'
 import Images from './Images';
+import Favs from './Favs'
 import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDice, faMapLocationDot, faHeart } from '@fortawesome/free-solid-svg-icons'
@@ -9,25 +10,27 @@ import Loading from './Loading'
 
 import { motion } from 'framer-motion'
 
-const Destinations = ({ destinationResult, center, handleSubmit, location }) => {
+const Destinations = ({ destinationResult, center, handleSubmit, location, setDestinationsToggle, destinationsToggle  }) => {
     const [loading, setLoading] = useState(true)
     const [mapToggle, setMapToggle] = useState(false)
     const [imagesToggle, setImagesToggle] = useState(true)
     const [destinationTitle, setDestinationTitle] = useState(true)
     const [liked, setLiked] = useState(false)
-    const [favs, setFavs] = useState([])
+    const [favsList, setFavsList] = useState([])
+    const [favsToggle, setFavsToggle] = useState(false)
 
-    console.log(favs)
 
     const addFav = () => {
         setLiked(true)
         console.log(destinationResult)
-        if (favs.includes(destinationResult)) {
+        if (favsList.includes(destinationResult)) {
             console.log(`${destinationResult} already in favorites`)
+            console.log(favsList)
             } else {
-            setFavs([...favs, destinationResult])
+            setFavsList([...favsList, destinationResult])
         }
     }
+
 
         setTimeout(function () {
           setLiked(false);
@@ -37,10 +40,20 @@ const Destinations = ({ destinationResult, center, handleSubmit, location }) => 
             setTimeout(() => setLoading(false), 1000)
           }, [])
 
+    //toggle Favs component
+    //on button click create a function to set state to true
+    //if state = true, render Favs component, else null
+    
+    
     return (
         <>
 
             <div className='wrapper'>
+                <h2 className='favs-nav' onClick={() => {
+                    setFavsToggle(!favsToggle)
+                }}>Favs</h2>
+
+                {favsToggle ? <Favs favsList={favsList} /> : null }
             
                 <motion.div className='card-container'
                 initial={{ opacity: 0, scale: 0.5 }}

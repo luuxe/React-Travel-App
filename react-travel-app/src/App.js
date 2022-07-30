@@ -99,8 +99,11 @@ function App() {
       {destinationsToggle && <Destinations
           destinationResult={destinationResult}
           center={center}
-          handleSubmit={handleSubmit}
-          location={location}
+        handleSubmit={handleSubmit}
+        location={location}
+        destinationsToggle={destinationsToggle}
+        setDestinationsToggle={setDestinationsToggle} 
+
       />}
         
       
