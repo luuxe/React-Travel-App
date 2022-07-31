@@ -10,6 +10,7 @@
 .like-btn:hover {
     color: rgb(255, 47, 82);
 }
+
 .like-btn:active {
     color: rgb(255, 47, 82);
 }
@@ -65,7 +66,6 @@
 
 .addToFav {
     color: red;
-    text-shadow: 3px 2px 3px rgba(165, 165, 165, 0.705);
     font-weight: 500;
     font-size: 18px;
     top: 0;
@@ -77,6 +77,11 @@
 
 .control-arrow {
     height: inherit;
+    background: rgba(255, 254, 254, 0);
+}
+
+.carousel.carousel-slider .control-arrow:hover {
+    background: rgba(0, 0, 0, 0);
 }
 
 .card-body img {

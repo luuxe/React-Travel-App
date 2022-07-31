@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faHeart} from '@fortawesome/free-solid-svg-icons'
+import { motion } from 'framer-motion'
 
 const Favs = ({ favsList, getFav, isEmpty }) => {
     
@@ -8,12 +9,19 @@ const Favs = ({ favsList, getFav, isEmpty }) => {
     return (
         <div className='favs-container'>
             <h1>Favorite Destinations</h1>
-            {isEmpty ? <div><p>favorites list is empty!</p> <p>Try clicking <span><FontAwesomeIcon icon={faHeart} /></span> to save a destination</p></div> : favsList.map((fav) => (
+            {isEmpty ? <div><p>favorites list is empty!</p> <p>Try clicking <span><FontAwesomeIcon icon={faHeart} /></span> to save a destination to your list.</p></div> : favsList.map((fav) => (
                         <ul key={fav}>
-                            <li onClick={getFav}>{fav}</li>
+                            <motion.li onClick={getFav}
+  whileHover={{
+    scale: 0.9,
+    transition: { duration: 0.5 },
+  }}
+  whileTap={{ scale: 0.9}}
+>{fav}</motion.li>
                         </ul>
                     ))
-                }
+            }
+            <p className='developed-by'>Developed by <a href='https://github.com/luuxe/React-Travel-App'>Luxe Hahn</a></p>
         </div>
     );
 };

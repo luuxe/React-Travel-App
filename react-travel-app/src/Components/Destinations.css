@@ -31,10 +31,10 @@
 }
 
 .favs-container h1 {
-    font-size: 20px;
+    font-size: 18px;
     text-align: left;
-    font-weight: 200;
-    margin: 9px 20px 20px 40px;
+    font-weight: 500;
+    margin: 6px 20px 20px 40px;
 }
 
 .favs-container ul {
@@ -58,20 +58,29 @@
     font-size: 14px;
     text-align: left;
     margin-left: 10px;
+    margin-top: 10px;
 }
 
 .favs-container span {
     color: white;
 }
 
+.developed-by {
+    position: fixed;
+    bottom: 0;
+    font-weight: 300;
+    font-size: 18px;
+}
+
 .destination-title {
     font-size: 50px;
     color: black;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 300;
     text-transform: uppercase;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 0px;
+    padding-bottom: 20px;
 }
 
 .map-container {
