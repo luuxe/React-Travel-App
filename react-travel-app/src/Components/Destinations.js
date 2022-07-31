@@ -10,7 +10,7 @@ import Loading from './Loading'
 
 import { motion } from 'framer-motion'
 
-const Destinations = ({ destinationResult, center, handleSubmit, location, getFav }) => {
+const Destinations = ({ destinationResult, center, handleSubmit, location, getFav, favsToggle, setFavsToggle }) => {
     //set loading
     const [loading, setLoading] = useState(true)
 
@@ -29,9 +29,6 @@ const Destinations = ({ destinationResult, center, handleSubmit, location, getFa
     //set favsList, starts as empty array, returns destinations when clicked
     const [favsList, setFavsList] = useState([])
 
-    //set favs list mount/unmount
-    const [favsToggle, setFavsToggle] = useState(false)
-    
     //tracks if favs list is empty
     const [isEmpty, setIsEmpty] = useState(true)
 
@@ -63,7 +60,6 @@ const Destinations = ({ destinationResult, center, handleSubmit, location, getFa
     
     return (
         <>
-
             <nav className='favs-nav'>
                 <p className='favs-toggle' onClick={() => {
                     setFavsToggle(!favsToggle)
@@ -71,7 +67,7 @@ const Destinations = ({ destinationResult, center, handleSubmit, location, getFa
                 <HomeBtn
             />
                 </nav>
-                {favsToggle ? <Favs favsList={favsList} getFav={getFav} isEmpty={isEmpty} /> : null }
+                {favsToggle ? <Favs favsList={favsList} getFav={getFav} isEmpty={isEmpty} favsToggle={favsToggle} setFavsToggle={setFavsToggle} /> : null }
                 
             <div className='wrapper'>
                 <motion.div className='card-container'

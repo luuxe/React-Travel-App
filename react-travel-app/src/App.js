@@ -41,6 +41,8 @@ function App() {
       lng: Number(longitude[i])
     })
   
+  
+  
   function handleSubmit() {
     incrementIndex(i + 1)
     if (i === destinationName.length) {
@@ -54,6 +56,10 @@ function App() {
        })
     }
   }
+
+//set favs list mount/unmount
+const [favsToggle, setFavsToggle] = useState(false)
+    
   
   function getFav(e) {
     //get destination name
@@ -66,7 +72,8 @@ function App() {
     setCenter({ 
         lat: Number(latitude[foundIndex]),
         lng: Number(longitude[foundIndex])
-       })
+    })
+    setFavsToggle(!favsToggle)
 }
 
 
@@ -114,6 +121,8 @@ function App() {
         destinationsToggle={destinationsToggle}
         setDestinationsToggle={setDestinationsToggle} 
         getFav={getFav}
+        setFavsToggle={setFavsToggle}
+        favsToggle={favsToggle}
 
       />}
         
