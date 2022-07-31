@@ -51,13 +51,13 @@ video {
   justify-content: center;
   align-items: center;
   color: white;
-  background-color: rgba(0,0,0,.25);
-
+  background-color: rgba(0,0,0,.15);
 }
 
 .Welcome-text {
   margin-bottom: 20px;
-  font-size: 32px;
+  font-size: 30px;
+  font-weight: 500;
 }
 
 .feeling-lucky-btn {
