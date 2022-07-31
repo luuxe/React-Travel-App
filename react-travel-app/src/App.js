@@ -6,14 +6,12 @@ import '../src/Components/Destinations.css'
 import '../src/Components/Images.css'
 import videoBackground from '../src/assets/videoBackground.mp4'
 
-
 //Components
 import Destinations from './Components/Destinations';
 import Welcome from './Components/Welcome';
 import { LoadScript } from '@react-google-maps/api';
 import { destinationsData } from './data.js'
 import { useEffect, useState } from "react";
-import Loading from './Components/Loading';
 
 
 const destinationName = destinationsData.map((destination) => {
@@ -89,8 +87,6 @@ const [favsToggle, setFavsToggle] = useState(false)
 
   return (
     <div className="App">
-      {loading === false ? (
-  <>
           <video
               loop
               muted
@@ -108,11 +104,6 @@ const [favsToggle, setFavsToggle] = useState(false)
                 destinationsToggle={destinationsToggle}
                 setDestinationsToggle={setDestinationsToggle}   
           />}  
-      </>
-  
-    ) : (
-      <Loading />
-    )}
       {destinationsToggle && <Destinations
           destinationResult={destinationResult}
           center={center}

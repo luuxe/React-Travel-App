@@ -68,11 +68,9 @@
     color: red;
     font-weight: 500;
     font-size: 18px;
-    top: 0;
     text-align: center;
-    position: absolute;
-    display: flex;
-    justify-content: center;
+    position: fixed;
+    top: 0;
 }
 
 .control-arrow {

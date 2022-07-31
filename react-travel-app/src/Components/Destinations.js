@@ -4,7 +4,7 @@ import Images from './Images';
 import Favs from './Favs'
 import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDice, faMapLocationDot, faHeart, faBars} from '@fortawesome/free-solid-svg-icons'
+import { faDice, faMapLocationDot, faHeart, faBars, faX } from '@fortawesome/free-solid-svg-icons'
 import HomeBtn from './HomeBtn'
 import Loading from './Loading'
 
@@ -38,7 +38,8 @@ const Destinations = ({ destinationResult, center, handleSubmit, location, getFa
         setIsEmpty(false)
         //if favsList includes the liked destination, do nothing. If it is not included, update favs list array to add new destination
         if (favsList.includes(destinationResult)) {
-            console.log(`${destinationResult} already in favorites`)
+            // console.log(`${destinationResult} already in favorites`)
+            return null;
             } else {
             setFavsList([...favsList, destinationResult])
         }
@@ -47,7 +48,7 @@ const Destinations = ({ destinationResult, center, handleSubmit, location, getFa
     //function to clear 'add to favs' tag
         setTimeout(function () {
           setLiked(false);
-        }, 3000);
+        }, 2000);
     
         useEffect(() => {
             setTimeout(() => setLoading(false), 1000)
@@ -63,7 +64,8 @@ const Destinations = ({ destinationResult, center, handleSubmit, location, getFa
             <nav className='favs-nav'>
                 <p className='favs-toggle' onClick={() => {
                     setFavsToggle(!favsToggle)
-                }}><FontAwesomeIcon icon={faBars} /></p>
+                }}>
+                    { favsToggle ? <FontAwesomeIcon icon={faX} /> : <FontAwesomeIcon icon={faBars} /> }</p>
                 <HomeBtn
             />
                 </nav>
@@ -93,8 +95,8 @@ const Destinations = ({ destinationResult, center, handleSubmit, location, getFa
             
                      {loading === false ? (
                     <div className='destinations-content'>
-                        {imagesToggle && <Images location={location} />}
-                        {liked ? <p className='addToFav' style={{
+                            {imagesToggle && <Images location={location} />}
+                            {liked ? <p className='addToFav' style={{
                             display: liked ? 'block' : 'none',
                         }}
                         >Added to favorites!</p> : null}
