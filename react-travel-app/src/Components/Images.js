@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import {motion} from 'framer-motion'
 
 const Images = ({ location, destinationResult }) => {
 

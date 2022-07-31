@@ -13,7 +13,7 @@ const Favs = ({ favsList, getFav, isEmpty }) => {
                         <ul key={fav}>
                             <motion.li onClick={getFav}
   whileHover={{
-    scale: 0.9,
+    scale: 0.95,
     transition: { duration: 0.5 },
   }}
   whileTap={{ scale: 0.9}}

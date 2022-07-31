@@ -65,7 +65,7 @@ const Destinations = ({ destinationResult, center, handleSubmit, location, getFa
         <>
 
             <nav className='favs-nav'>
-                <p className='favs-arrow-toggle' onClick={() => {
+                <p className='favs-toggle' onClick={() => {
                     setFavsToggle(!favsToggle)
                 }}><FontAwesomeIcon icon={faBars} /></p>
                 <HomeBtn

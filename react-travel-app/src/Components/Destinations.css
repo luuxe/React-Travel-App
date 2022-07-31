@@ -28,7 +28,17 @@
     left: 0;
     background-color: rgba(172, 221, 222, 0.862);
     z-index: 2;
+    animation: .3s slide-right;
 }
+@keyframes slide-right {
+  from {
+    margin-left: -50%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
 
 .favs-container h1 {
     font-size: 18px;
@@ -47,11 +57,24 @@
     margin: 20px 10px 10px 10px;
     padding: 5px;
     background-color: aliceblue;
+    display: flex;
+    justify-content: space-between;
 }
 
 .favs-container li:hover {
     color: rgb(188, 153, 112);
     cursor: pointer;
+}
+
+.delete-btn {
+    background-color: rgba(255, 255, 255, 0); 
+    border: none;
+    cursor: pointer;
+}
+
+.favs-container div {
+    margin-right: 10px;
+    margin-top: 40px;
 }
 
 .favs-container p {
@@ -70,6 +93,10 @@
     bottom: 0;
     font-weight: 300;
     font-size: 18px;
+}
+
+.developed-by a {
+    color: grey
 }
 
 .destination-title {
@@ -99,6 +126,8 @@
 
 .footer a {
     color: black;
+    font-weight: 300;
+    font-size: 18px;
     text-decoration: none;
 }
 
