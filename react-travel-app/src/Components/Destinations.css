@@ -100,7 +100,7 @@
 }
 
 .destination-title {
-    font-size: 50px;
+    font-size: 45px;
     color: black;
     font-family: 'Inter', sans-serif;
     font-weight: 300;
@@ -133,7 +133,7 @@
 
 @media only screen and (max-width: 500px) {
     .destination-title {
-        font-size: 46px;
+        font-size: 42px;
         /* padding: 20px 0px 10px 0px; */
     }
 

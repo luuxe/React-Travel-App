@@ -28,7 +28,7 @@ const Welcome = ({ welcomeToggle, setWelcomeToggle, destinationsToggle, setDesti
     return (
         <>
             {!loading ? 
-        <div className='Welcome-content'>
+                <div className='Welcome-content'>
                 <p className='Welcome-text'>{travelSayings[phraseIndex]}</p>
 
                 <motion.button className='feeling-lucky-btn' whileTap={{ scale: 0.8 }} onClick={(() => {
